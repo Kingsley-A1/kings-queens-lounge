@@ -1,421 +1,1241 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kings & Queens Restaurant and Lounge — Dine Like Royalty</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sunflour Bakery — Calabar</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/icons/favicon-16x16.png"
+    />
 
-  <!-- PWA Meta -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#e34a3b">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#d4af37" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <link rel="apple-touch-icon" href="assets/icons/icon-512.png" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/components.css">
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- SEO -->
-  <meta name="description"
-    content="Sunflour Bakery — Fresh breads, cakes, pastries and fast foods in Calabar. Order online for delivery or pickup.">
-  <meta name="keywords" content="bakery, bread, cakes, pastries, fast food, Calabar, Nigeria, fresh baked goods">
-  <meta name="author" content="Sunflour Bakery">
-  <meta property="og:title" content="Sunflour Bakery — Fresh Baked Goods in Calabar">
-  <meta property="og:description"
-    content="Taste the sunshine with our fresh breads, cakes, and pastries. Order online for delivery in Calabar.">
-  <meta property="og:image" content="assets/images/bread_category.png">
-  <meta property="og:url" content="https://sunflourbakery.com">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://sunflourbakery.com">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Bakery",
-    "name": "Sunflour Bakery",
-    "description": "Fresh breads, cakes, pastries and fast foods baked daily in Calabar",
-    "url": "https://sunflourbakery.com",
-    "telephone": "+2341234567890",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Bakery Street",
-      "addressLocality": "Calabar",
-      "addressRegion": "Cross River",
-      "addressCountry": "NG"
-    },
-    "openingHours": [
-      "Mo-Fr 07:00-19:00",
-      "Sa 08:00-18:00",
-      "Su 09:00-16:00"
-    ],
-    "servesCuisine": "Bakery",
-    "priceRange": "$$",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "500"
-    }
-  }
-  </script>
-</head>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 
-<body>
-  <!-- Skip to content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Kings & Queens Restaurant and Lounge — Experience fine dining, craft cocktails, and unforgettable moments. Dine like royalty in Calabar's premier destination."
+    />
+    <meta
+      name="keywords"
+      content="restaurant, lounge, fine dining, cocktails, Calabar, Nigeria, private events, chef specials"
+    />
+    <meta name="author" content="Kings & Queens Restaurant and Lounge" />
+    <meta
+      property="og:title"
+      content="Kings & Queens Restaurant and Lounge — Dine Like Royalty"
+    />
+    <meta
+      property="og:description"
+      content="Experience culinary excellence in an atmosphere fit for kings and queens. Fine dining, craft cocktails, and unforgettable moments."
+    />
+    <meta property="og:image" content="assets/images/hero_background.png" />
+    <meta property="og:url" content="https://kingsandqueenslounge.com" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://kingsandqueenslounge.com" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Kings & Queens Restaurant and Lounge",
+        "description": "Fine dining, craft cocktails, and unforgettable moments in Calabar's premier destination",
+        "url": "https://kingsandqueenslounge.com",
+        "telephone": "+2349036826272",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Royal Avenue",
+          "addressLocality": "Calabar",
+          "addressRegion": "Cross River",
+          "addressCountry": "NG"
+        },
+        "openingHours": [
+          "Mo-Fr 11:00-23:00",
+          "Sa 12:00-00:00",
+          "Su 12:00-22:00"
+        ],
+        "servesCuisine": ["Continental", "Nigerian", "Fusion"],
+        "priceRange": "$$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "850"
+        }
+      }
+    </script>
+  </head>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="48" height="48">
-        <span class="brand-name">Sunflour Bakery</span>
-      </a>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav"
-        aria-label="Toggle navigation menu">
-        <span class="nav-toggle-icon"></span>
-      </button>
-      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="catering.html">Catering</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="checkout.html">Checkout</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="order-success.html">Payment</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <main id="main-content">
-    <section class="hero">
-      <div class="hero-inner container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 class="hero-title">Taste the Sunshine — Fresh from our Ovens in Calabar</h1>
-            <p class="hero-sub">Breads, cakes, pastries, fast food and drinks — baked daily with love. Order online for
-              pickup or delivery.</p>
-            <div class="hero-ctas">
-              <a class="btn btn-primary" href="menu.html">See the Menu</a>
-              <a class="btn btn-outline" href="catering.html">Order for Events</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/icons/icon-512.png"
+            alt="Kings & Queens logo"
+            width="48"
+            height="48"
+          />
+          <span class="brand-name">Kings & Queens</span>
+        </a>
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle-icon"></span>
+        </button>
+        <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section - Premium Restaurant Experience with Image Slideshow -->
+      <section class="hero" id="hero">
+        <div class="hero-background">
+          <div class="hero-overlay"></div>
+          <!-- Image Slideshow -->
+          <div class="hero-slideshow">
+            <div
+              class="hero-slide active"
+              style="background-image: url('assets/images/hero_background.png')"
+            ></div>
+            <div
+              class="hero-slide"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+            <div
+              class="hero-slide"
+              style="
+                background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+              "
+            ></div>
+          </div>
+          <!-- Slideshow Navigation Dots -->
+          <div class="hero-dots">
+            <button
+              class="hero-dot active"
+              data-slide="0"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              class="hero-dot"
+              data-slide="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              class="hero-dot"
+              data-slide="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+        </div>
+        <div class="hero-inner container">
+          <div class="hero-content">
+            <span class="hero-badge animate-fade-in"
+              >✨ Calabar's Premier Dining Destination</span
+            >
+            <h1 class="hero-title animate-slide-up">
+              Dine Like <span class="text-gold">Royalty</span>
+            </h1>
+            <p class="hero-sub animate-slide-up-delay">
+              Experience culinary excellence in an atmosphere fit for kings and
+              queens. Fine dining, craft cocktails, and unforgettable moments
+              await.
+            </p>
+            <div class="hero-ctas animate-fade-in-delay">
+              <a class="btn btn-primary btn-lg" href="reservations.html">
+                <span>Reserve Your Table</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a class="btn btn-outline-light btn-lg" href="menu.html"
+                >Explore Our Menu</a
+              >
             </div>
-            <ul class="hero-features">
-              <li>Fresh daily — locally sourced ingredients</li>
-              <li>Custom cakes & event catering</li>
-              <li>Fast delivery across Calabar</li>
+            <div class="hero-features animate-fade-in-delay-2">
+              <div class="hero-feature">
+                <span class="hero-feature-icon">👑</span>
+                <span>Fine Dining</span>
+              </div>
+              <div class="hero-feature">
+                <span class="hero-feature-icon">🍸</span>
+                <span>Craft Cocktails</span>
+              </div>
+              <div class="hero-feature">
+                <span class="hero-feature-icon">🎵</span>
+                <span>Live Entertainment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll to explore</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </section>
+
+      <!-- Royal Experience Section -->
+      <section class="royal-experience" id="experience">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">The Experience</span>
+            <h2>
+              Where Every Moment<br />Feels <span class="text-gold">Royal</span>
+            </h2>
+            <p class="section-sub">
+              Indulge in a world-class dining experience that combines exquisite
+              cuisine, impeccable service, and an atmosphere of pure elegance.
+            </p>
+          </div>
+          <div class="experience-grid">
+            <article class="experience-card animate-on-scroll" data-delay="0">
+              <div class="experience-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              </div>
+              <h3>Fine Dining</h3>
+              <p>
+                Chef-crafted dishes that blend local flavors with international
+                techniques. Every plate is a masterpiece.
+              </p>
+            </article>
+            <article class="experience-card animate-on-scroll" data-delay="100">
+              <div class="experience-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M8 22h8M12 2v20M17 8V5a1 1 0 00-1-1H8a1 1 0 00-1 1v3"
+                  />
+                  <circle cx="12" cy="14" r="4" />
+                </svg>
+              </div>
+              <h3>Craft Cocktails</h3>
+              <p>
+                Signature drinks crafted by expert mixologists. From classic
+                cocktails to innovative creations.
+              </p>
+            </article>
+            <article class="experience-card animate-on-scroll" data-delay="200">
+              <div class="experience-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3>Private Events</h3>
+              <p>
+                Exclusive spaces for weddings, corporate events, and
+                celebrations. Make your special day unforgettable.
+              </p>
+            </article>
+            <article class="experience-card animate-on-scroll" data-delay="300">
+              <div class="experience-icon">
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M9 18V5l12-2v13M9 18c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zM21 16c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"
+                  />
+                </svg>
+              </div>
+              <h3>Live Entertainment</h3>
+              <p>
+                Weekend performances featuring live bands and DJs. Dine and
+                dance the night away.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Categories -->
+      <section class="categories" id="categories">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Our Menu</span>
+            <h2>Culinary <span class="text-gold">Excellence</span></h2>
+            <p class="section-sub">
+              From signature dishes to decadent desserts, explore our carefully
+              curated menu.
+            </p>
+          </div>
+          <div class="category-grid">
+            <a
+              href="menu.html?category=main-courses"
+              class="category-item animate-on-scroll"
+              data-delay="0"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/bread_category.png"
+                  alt="Main Courses"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Main Courses</h3>
+                <p>Chef's signature dishes</p>
+                <span class="category-link">Explore →</span>
+              </div>
+            </a>
+            <a
+              href="menu.html?category=lounge-bar"
+              class="category-item animate-on-scroll"
+              data-delay="100"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/drinks_category.png"
+                  alt="Lounge & Bar"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Lounge & Bar</h3>
+                <p>Craft cocktails & spirits</p>
+                <span class="category-link">Explore →</span>
+              </div>
+            </a>
+            <a
+              href="menu.html?category=chef-specials"
+              class="category-item animate-on-scroll"
+              data-delay="200"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/cake_category.png"
+                  alt="Chef's Specials"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Chef's Specials</h3>
+                <p>Seasonal exclusives</p>
+                <span class="category-link">Explore →</span>
+              </div>
+            </a>
+            <a
+              href="menu.html?category=desserts"
+              class="category-item animate-on-scroll"
+              data-delay="300"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/pastries_category.png"
+                  alt="Desserts"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Desserts</h3>
+                <p>Sweet indulgences</p>
+                <span class="category-link">Explore →</span>
+              </div>
+            </a>
+            <a
+              href="menu.html?category=appetizers"
+              class="category-item animate-on-scroll"
+              data-delay="400"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/fastfood_category.png"
+                  alt="Appetizers"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Appetizers</h3>
+                <p>Perfect starters</p>
+                <span class="category-link">Explore →</span>
+              </div>
+            </a>
+            <a
+              href="events.html"
+              class="category-item animate-on-scroll"
+              data-delay="500"
+            >
+              <div class="category-image-wrapper">
+                <img
+                  src="assets/images/more_category.png"
+                  alt="Private Events"
+                  loading="lazy"
+                />
+                <div class="category-overlay"></div>
+              </div>
+              <div class="category-content">
+                <h3>Private Events</h3>
+                <p>Exclusive celebrations</p>
+                <span class="category-link">Learn More →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Dishes -->
+      <section class="featured" id="featured">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Chef's Selection</span>
+            <h2>Signature <span class="text-gold">Dishes</span></h2>
+            <p class="section-sub">
+              Handpicked favorites from our award-winning kitchen.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="product-card animate-on-scroll" data-delay="0">
+              <div class="product-image-wrapper">
+                <span class="product-badge bestseller">Chef's Choice</span>
+                <img
+                  src="assets/images/sourdough_bread.png"
+                  alt="Royal Grilled Ribeye"
+                  class="product-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-body">
+                <h3 class="product-title">Royal Grilled Ribeye</h3>
+                <p class="product-tags">Main Course • Premium • ₦18,500</p>
+                <p class="product-desc">
+                  Prime ribeye steak with truffle butter, roasted vegetables,
+                  and red wine reduction.
+                </p>
+                <div class="product-actions">
+                  <a href="menu.html" class="btn btn-primary btn-small"
+                    >Order Now</a
+                  >
+                  <button
+                    class="btn btn-ghost btn-small"
+                    data-action="quickview"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card animate-on-scroll" data-delay="100">
+              <div class="product-image-wrapper">
+                <span class="product-badge popular">Popular</span>
+                <img
+                  src="assets/images/chocolate_cake.png"
+                  alt="Lobster Thermidor"
+                  class="product-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-body">
+                <h3 class="product-title">Lobster Thermidor</h3>
+                <p class="product-tags">Seafood • Luxe • ₦24,000</p>
+                <p class="product-desc">
+                  Classic French preparation with cognac cream sauce and gruyère
+                  crust.
+                </p>
+                <div class="product-actions">
+                  <a href="menu.html" class="btn btn-primary btn-small"
+                    >Order Now</a
+                  >
+                  <button
+                    class="btn btn-ghost btn-small"
+                    data-action="quickview"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card animate-on-scroll" data-delay="200">
+              <div class="product-image-wrapper">
+                <span class="product-badge new">New</span>
+                <img
+                  src="assets/images/butter_croissant.png"
+                  alt="Queen's Garden Salad"
+                  class="product-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-body">
+                <h3 class="product-title">Queen's Garden Salad</h3>
+                <p class="product-tags">Healthy • Fresh • ₦6,500</p>
+                <p class="product-desc">
+                  Mixed greens with grilled chicken, avocado, feta, and honey
+                  lime dressing.
+                </p>
+                <div class="product-actions">
+                  <a href="menu.html" class="btn btn-primary btn-small"
+                    >Order Now</a
+                  >
+                  <button
+                    class="btn btn-ghost btn-small"
+                    data-action="quickview"
+                  >
+                    Quick View
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="section-cta animate-on-scroll">
+            <a href="menu.html" class="btn btn-outline btn-lg"
+              >View Full Menu</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us -->
+      <section class="why-choose-us" id="why-us">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Why Us</span>
+            <h2>The Royal <span class="text-gold">Difference</span></h2>
+            <p class="section-sub">
+              What sets Kings & Queens apart from the rest.
+            </p>
+          </div>
+          <div class="benefits-grid">
+            <article class="benefit-card animate-on-scroll" data-delay="0">
+              <div class="benefit-icon">🏆</div>
+              <h3>Award-Winning Cuisine</h3>
+              <p>
+                Recognized as Calabar's Best Restaurant 2024 & 2025. Our chefs
+                bring world-class expertise to every dish.
+              </p>
+            </article>
+            <article class="benefit-card animate-on-scroll" data-delay="100">
+              <div class="benefit-icon">🌿</div>
+              <h3>Farm-to-Table Fresh</h3>
+              <p>
+                We source the finest ingredients from local farms and premium
+                suppliers. Taste the difference in every bite.
+              </p>
+            </article>
+            <article class="benefit-card animate-on-scroll" data-delay="200">
+              <div class="benefit-icon">👨‍🍳</div>
+              <h3>Master Chefs</h3>
+              <p>
+                Our culinary team includes internationally trained chefs with
+                experience in Michelin-starred restaurants.
+              </p>
+            </article>
+            <article class="benefit-card animate-on-scroll" data-delay="300">
+              <div class="benefit-icon">✨</div>
+              <h3>Impeccable Service</h3>
+              <p>
+                White-glove service that anticipates your needs. Every guest is
+                treated like royalty.
+              </p>
+            </article>
+            <article class="benefit-card animate-on-scroll" data-delay="400">
+              <div class="benefit-icon">🎭</div>
+              <h3>Elegant Ambiance</h3>
+              <p>
+                Stunning interiors with warm lighting, curated art, and
+                sophisticated design for the perfect atmosphere.
+              </p>
+            </article>
+            <article class="benefit-card animate-on-scroll" data-delay="500">
+              <div class="benefit-icon">🌙</div>
+              <h3>Nightlife Experience</h3>
+              <p>
+                Transform from restaurant to lounge after 9 PM. Live music,
+                premium drinks, and unforgettable nights.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Reviews</span>
+            <h2>What Our <span class="text-gold">Guests</span> Say</h2>
+            <p class="section-sub">
+              Hear from those who've experienced the royal treatment.
+            </p>
+          </div>
+          <div class="testimonial-grid">
+            <blockquote class="testimonial animate-on-scroll" data-delay="0">
+              <img
+                src="assets/images/avatar_ada.png"
+                alt="Ada O."
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p>
+                "An absolutely stunning dining experience. The lobster was
+                cooked to perfection, and the service was impeccable. We felt
+                like true royalty!"
+              </p>
+              <cite>Ada Okonkwo<small>Food Blogger</small></cite>
+            </blockquote>
+            <blockquote class="testimonial animate-on-scroll" data-delay="100">
+              <img
+                src="assets/images/avatar_john.png"
+                alt="John E."
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p>
+                "Hosted our corporate dinner here and exceeded all expectations.
+                The private dining room, the menu, everything was world-class."
+              </p>
+              <cite>John Essien<small>CEO, TechVentures</small></cite>
+            </blockquote>
+            <blockquote class="testimonial animate-on-scroll" data-delay="200">
+              <img
+                src="assets/images/avatar_mary.png"
+                alt="Mary T."
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p>
+                "The cocktails are incredible! The mixologist crafted a custom
+                drink for my birthday. The lounge vibe on weekends is
+                unmatched."
+              </p>
+              <cite>Mary Thompson<small>Regular Guest</small></cite>
+            </blockquote>
+            <blockquote class="testimonial animate-on-scroll" data-delay="300">
+              <img
+                src="assets/images/avatar_emeka.png"
+                alt="Emeka N."
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p>
+                "From anniversary dinners to casual lunches, Kings & Queens
+                never disappoints. The ribeye steak is the best in Calabar,
+                hands down."
+              </p>
+              <cite>Emeka Nnamdi<small>Loyal Customer</small></cite>
+            </blockquote>
+            <blockquote class="testimonial animate-on-scroll" data-delay="400">
+              <img
+                src="assets/images/avatar_sarah.png"
+                alt="Sarah K."
+                class="testimonial-avatar"
+                loading="lazy"
+              />
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                ★★★★★
+              </div>
+              <p>
+                "We held our wedding reception here and it was magical. The
+                event team handled everything beautifully. Forever grateful!"
+              </p>
+              <cite>Sarah Kalu<small>Newlywed</small></cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats -->
+      <section class="stats" id="stats">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Our Impact</span>
+            <h2>Numbers That <span class="text-gold">Speak</span></h2>
+          </div>
+          <div class="stats-grid">
+            <div class="stat animate-on-scroll" data-delay="0">
+              <h3 class="stat-number">5+</h3>
+              <p>Years of Excellence</p>
+            </div>
+            <div class="stat animate-on-scroll" data-delay="100">
+              <h3 class="stat-number">15000+</h3>
+              <p>Happy Guests</p>
+            </div>
+            <div class="stat animate-on-scroll" data-delay="200">
+              <h3 class="stat-number">500+</h3>
+              <p>Events Hosted</p>
+            </div>
+            <div class="stat animate-on-scroll" data-delay="300">
+              <h3 class="stat-number">4.9</h3>
+              <p>Star Rating</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reservation CTA -->
+      <section class="reservation-cta" id="reservation-cta">
+        <div
+          class="reservation-bg"
+          style="background-image: url('assets/images/hero_background.png')"
+        ></div>
+        <div class="reservation-overlay"></div>
+        <div class="container">
+          <div class="reservation-content animate-on-scroll">
+            <span class="section-badge light">Make It Special</span>
+            <h2>
+              Reserve Your <span class="text-gold">Royal</span> Experience
+            </h2>
+            <p>
+              Secure your table for an unforgettable dining experience. Special
+              occasions deserve special treatment.
+            </p>
+            <div class="reservation-ctas">
+              <a href="reservations.html" class="btn btn-primary btn-lg">
+                <span>Book a Table</span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a href="tel:+2349036826272" class="btn btn-outline-light btn-lg">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                  />
+                </svg>
+                <span>Call Now</span>
+              </a>
+            </div>
+            <p class="reservation-note">
+              Or reach us on WhatsApp: +234 903 682 6272
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Preview -->
+      <section class="gallery-preview" id="gallery-preview">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Gallery</span>
+            <h2>A Glimpse of <span class="text-gold">Elegance</span></h2>
+            <p class="section-sub">
+              Step inside our world of culinary artistry and refined ambiance.
+            </p>
+          </div>
+          <div class="gallery-grid animate-on-scroll">
+            <div class="gallery-item gallery-item-large">
+              <img
+                src="assets/images/hero_background.png"
+                alt="Restaurant interior"
+                loading="lazy"
+              />
+              <div class="gallery-overlay">
+                <span>Interior</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/images/chocolate_cake.png"
+                alt="Signature dish"
+                loading="lazy"
+              />
+              <div class="gallery-overlay">
+                <span>Cuisine</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/images/drinks_category.png"
+                alt="Craft cocktails"
+                loading="lazy"
+              />
+              <div class="gallery-overlay">
+                <span>Cocktails</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/images/birthday_cake.png"
+                alt="Private event"
+                loading="lazy"
+              />
+              <div class="gallery-overlay">
+                <span>Events</span>
+              </div>
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/images/sourdough_bread.png"
+                alt="Fresh preparation"
+                loading="lazy"
+              />
+              <div class="gallery-overlay">
+                <span>Fresh</span>
+              </div>
+            </div>
+          </div>
+          <div class="section-cta animate-on-scroll">
+            <a href="gallery.html" class="btn btn-outline btn-lg"
+              >View Full Gallery</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Location & Hours -->
+      <section class="location-hours" id="location">
+        <div class="container">
+          <div class="location-grid">
+            <div class="location-info animate-on-scroll">
+              <div class="section-header left-align">
+                <span class="section-badge">Visit Us</span>
+                <h2>Find Your Way to <span class="text-gold">Royalty</span></h2>
+              </div>
+              <div class="location-details">
+                <div class="location-item">
+                  <div class="location-icon">📍</div>
+                  <div>
+                    <h4>Address</h4>
+                    <p>
+                      123 Royal Avenue, GRA<br />Calabar, Cross River State,
+                      Nigeria
+                    </p>
+                  </div>
+                </div>
+                <div class="location-item">
+                  <div class="location-icon">📞</div>
+                  <div>
+                    <h4>Phone</h4>
+                    <p><a href="tel:+2349036826272">+234 903 682 6272</a></p>
+                  </div>
+                </div>
+                <div class="location-item">
+                  <div class="location-icon">✉️</div>
+                  <div>
+                    <h4>Email</h4>
+                    <p>
+                      <a href="mailto:hello@kingsandqueenslounge.com"
+                        >hello@kingsandqueenslounge.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="location-item">
+                  <div class="location-icon">🕐</div>
+                  <div>
+                    <h4>Hours</h4>
+                    <ul class="hours-list">
+                      <li>
+                        <span>Monday - Friday</span>
+                        <span>11:00 AM - 11:00 PM</span>
+                      </li>
+                      <li>
+                        <span>Saturday</span> <span>12:00 PM - 12:00 AM</span>
+                      </li>
+                      <li>
+                        <span>Sunday</span> <span>12:00 PM - 10:00 PM</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="location-actions">
+                <a
+                  href="https://wa.me/2349036826272"
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg>
+                  WhatsApp Us
+                </a>
+                <a href="contact.html" class="btn btn-outline"
+                  >Get Directions</a
+                >
+              </div>
+            </div>
+            <div class="location-map animate-on-scroll">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.5!2d8.33!3d4.95!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1067862a2b2b2b2b%3A0x1234567890abcdef!2sCalabar%2C%20Nigeria!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s"
+                width="100%"
+                height="400"
+                style="border: 0; border-radius: 16px"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Kings & Queens Location Map"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter" id="newsletter">
+        <div class="container">
+          <div class="newsletter-content animate-on-scroll">
+            <div class="newsletter-text">
+              <span class="section-badge">Stay Connected</span>
+              <h2>Join the <span class="text-gold">Royal</span> Circle</h2>
+              <p>
+                Subscribe for exclusive offers, event invitations, and culinary
+                news.
+              </p>
+            </div>
+            <form id="newsletterForm" class="newsletter-form">
+              <div class="newsletter-input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  aria-label="Email address"
+                />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+              <p class="newsletter-note">No spam, ever. Unsubscribe anytime.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img
+              src="assets/icons/icon-512.png"
+              alt="Kings & Queens logo"
+              width="60"
+              height="60"
+            />
+            <h3>Kings & Queens</h3>
+            <p>Restaurant and Lounge</p>
+            <p class="footer-tagline">Dine Like Royalty</p>
+            <div class="footer-social">
+              <a
+                href="https://instagram.com/kingsandqueenslounge"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://facebook.com/kingsandqueenslounge"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/kqlounge"
+                target="_blank"
+                rel="noopener"
+                aria-label="Twitter"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links-group">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="menu.html">Our Menu</a></li>
+              <li><a href="reservations.html">Reservations</a></li>
+              <li><a href="events.html">Private Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="about.html">About Us</a></li>
             </ul>
           </div>
-          <div class="hero-image" aria-hidden="true" style="background-image:url('assets/images/hero_background.png')">
+          <div class="footer-links-group">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="categories container">
-      <h2>Our Categories</h2>
-      <div class="category-grid">
-        <div class="category-item">
-          <img src="assets/images/bread_category.png" alt="Breads" loading="lazy">
-          <h3>Breads</h3>
-          <p>Fresh loaves and rolls daily.</p>
-          <a href="menu.html?category=breads" class="btn btn-ghost">Explore</a>
-        </div>
-        <div class="category-item">
-          <img src="assets/images/cake_category.png" alt="Cakes" loading="lazy">
-          <h3>Cakes</h3>
-          <p>Custom cakes for every occasion.</p>
-          <a href="menu.html?category=cakes" class="btn btn-ghost">Explore</a>
-        </div>
-        <div class="category-item">
-          <img src="assets/images/pastries_category.png" alt="Pastries" loading="lazy">
-          <h3>Pastries</h3>
-          <p>Flaky and delicious treats.</p>
-          <a href="menu.html?category=pastries" class="btn btn-ghost">Explore</a>
-        </div>
-        <div class="category-item">
-          <img src="assets/images/fastfood_category.png" alt="Fast Foods" loading="lazy">
-          <h3>Fast Foods</h3>
-          <p>Quick and tasty meals.</p>
-          <a href="menu.html?category=fastfoods" class="btn btn-ghost">Explore</a>
-        </div>
-        <div class="category-item">
-          <img src="assets/images/drinks_category.png" alt="Drinks" loading="lazy">
-          <h3>Drinks</h3>
-          <p>Refreshing beverages.</p>
-          <a href="menu.html?category=drinks" class="btn btn-ghost">Explore</a>
-        </div>
-        <div class="category-item">
-          <img src="assets/images/more_category.png" alt="More" loading="lazy">
-          <h3>More</h3>
-          <p>Seasonal specials and more.</p>
-          <a href="menu.html?category=more" class="btn btn-ghost">Explore</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="featured container">
-      <h2>Featured Picks</h2>
-      <div class="card-grid">
-        <article class="product-card">
-          <img src="assets/images/sourdough_bread.png" alt="Signature Loaf" class="product-image" loading="lazy">
-          <div class="product-body">
-            <h3 class="product-title">Signature Country Loaf</h3>
-            <p class="product-tags">Breads • Rustic • ₦800</p>
-            <p class="product-desc">Hand-shaped sourdough with a golden crust — perfect for breakfast and sandwiches.
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>123 Royal Avenue, GRA<br />Calabar, Cross River State</p>
+            <p><a href="tel:+2349036826272">+234 903 682 6272</a></p>
+            <p>
+              <a href="mailto:hello@kingsandqueenslounge.com"
+                >hello@kingsandqueenslounge.com</a
+              >
             </p>
-            <div class="product-actions">
-              <button class="btn btn-small">Order Now</button>
-              <button class="btn btn-ghost" data-action="quickview">Quick View</button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <img src="assets/images/chocolate_cake.png" alt="Chocolate Cake" class="product-image" loading="lazy">
-          <div class="product-body">
-            <h3 class="product-title">Decadent Chocolate Cake</h3>
-            <p class="product-tags">Cakes • Rich • ₦2500</p>
-            <p class="product-desc">Layers of moist chocolate with ganache frosting.</p>
-            <div class="product-actions">
-              <button class="btn btn-small">Order Now</button>
-              <button class="btn btn-ghost" data-action="quickview">Quick View</button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <img src="assets/images/butter_croissant.png" alt="Croissant" class="product-image" loading="lazy">
-          <div class="product-body">
-            <h3 class="product-title">Buttery Croissant</h3>
-            <p class="product-tags">Pastries • Flaky • ₦400</p>
-            <p class="product-desc">Golden, flaky pastry baked fresh every morning.</p>
-            <div class="product-actions">
-              <button class="btn btn-small">Order Now</button>
-              <button class="btn btn-ghost" data-action="quickview">Quick View</button>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="why-choose-us">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Why Us</span>
-          <h2>Why Choose Sunflour Bakery?</h2>
-          <p class="section-sub">We're more than just a bakery — we're your neighborhood's favorite since 2014.</p>
-        </div>
-        <div class="benefits-grid">
-          <article class="benefit-card">
-            <div class="benefit-icon">🍞</div>
-            <h3>Baked Fresh Daily</h3>
-            <p>Every loaf, cake, and pastry is made fresh each morning using time-honored recipes.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="benefit-icon">🌿</div>
-            <h3>100% Local Ingredients</h3>
-            <p>We source from local farmers to bring you the freshest, most authentic flavors.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="benefit-icon">🎂</div>
-            <h3>Custom Orders Welcome</h3>
-            <p>Personalize your cakes and treats for weddings, birthdays, and special events.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="benefit-icon">⭐</div>
-            <h3>Award-Winning Quality</h3>
-            <p>Over 500 five-star reviews and 10+ years of baking excellence in Calabar.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="benefit-icon">🚚</div>
-            <h3>Fast Local Delivery</h3>
-            <p>Get your favorites delivered fresh to your doorstep within hours of ordering.</p>
-          </article>
-          <article class="benefit-card">
-            <div class="benefit-icon">💜</div>
-            <h3>Community First</h3>
-            <p>Supporting local events, schools, and families — we're proud to serve Calabar.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials container">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonial-grid">
-        <blockquote class="testimonial">
-          <img src="assets/images/avatar_ada.png" alt="Ada O." class="testimonial-avatar" loading="lazy">
-          <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"The best bread in Calabar! Fresh and delicious every single time. I've been a loyal customer for 3 years
-            now."</p>
-          <cite>Ada O.<small>Regular Customer</small></cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <img src="assets/images/avatar_john.png" alt="John E." class="testimonial-avatar" loading="lazy">
-          <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"Their wedding cake was an absolute masterpiece. Our guests couldn't stop raving about it!"</p>
-          <cite>John E.<small>Happy Groom</small></cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <img src="assets/images/avatar_mary.png" alt="Mary T." class="testimonial-avatar" loading="lazy">
-          <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"Quick service and amazing pastries. The croissants are to die for. My go-to spot for breakfast!"</p>
-          <cite>Mary T.<small>Local Resident</small></cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <img src="assets/images/avatar_emeka.png" alt="Emeka N." class="testimonial-avatar" loading="lazy">
-          <div class="testimonial-rating" aria-label="4 out of 5 stars">★★★★☆</div>
-          <p>"Best shawarma in town! The meat pies are also fantastic. Perfect for office lunch orders."</p>
-          <cite>Emeka N.<small>Business Professional</small></cite>
-        </blockquote>
-        <blockquote class="testimonial">
-          <img src="assets/images/avatar_sarah.png" alt="Sarah K." class="testimonial-avatar" loading="lazy">
-          <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-          <p>"The birthday cake they made for my daughter was beautiful and delicious. Will definitely order again!"</p>
-          <cite>Sarah K.<small>Happy Mom</small></cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="container">
-        <h2>Our Impact</h2>
-        <div class="stats-grid">
-          <div class="stat">
-            <h3>10+</h3>
-            <p>Years Baking</p>
-          </div>
-          <div class="stat">
-            <h3>5000+</h3>
-            <p>Happy Customers</p>
-          </div>
-          <div class="stat">
-            <h3>100+</h3>
-            <p>Events Catered</p>
-          </div>
-          <div class="stat">
-            <h3>50+</h3>
-            <p>Daily Products</p>
           </div>
         </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <h2>Ready to Taste the Sunshine?</h2>
-        <p>Visit us today or place your order online.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-primary" href="menu.html">Order Now</a>
-          <a class="btn btn-outline" href="contact.html">Contact Us</a>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="year"></span> Kings & Queens Restaurant and Lounge.
+            All rights reserved.
+          </p>
+          <p class="crafted-by">Crafted with ❤️ by <strong>KING</strong></p>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <section class="newsletter">
-      <div class="container">
-        <h2>Stay Updated</h2>
-        <p>Subscribe for baking tips, specials, and community news.</p>
-        <form id="newsletterForm">
-          <input type="email" placeholder="Your email" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" aria-label="Quick navigation">
+      <div class="bottom-nav-inner">
+        <a href="index.html" class="bottom-nav-item active" aria-current="page">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+            <polyline points="9,22 9,12 15,12 15,22" />
+          </svg>
+          <span>Home</span>
+        </a>
+        <a href="menu.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"
+            />
+          </svg>
+          <span>Menu</span>
+        </a>
+        <a href="reservations.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>Reserve</span>
+        </a>
+        <a href="gallery.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21,15 16,10 5,21" />
+          </svg>
+          <span>Gallery</span>
+        </a>
+        <a href="contact.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Contact</span>
+        </a>
       </div>
-    </section>
+    </nav>
 
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="40" height="40">
-          <span>Sunflour Bakery</span>
-        </div>
-        <div class="footer-links">
-          <a href="menu.html">Menu</a>
-          <a href="about.html">About</a>
-          <a href="catering.html">Catering</a>
-          <a href="contact.html">Contact</a>
-          <a href="blog.html">Blog</a>
-        </div>
-        <div class="footer-contact">
-          <a href="https://wa.me/2349036826272" target="_blank" rel="noopener" class="whatsapp-link"
-            aria-label="Chat on WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span>Chat with us</span>
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Sunflour Bakery — Calabar. All rights reserved.</p>
-        <p class="crafted-by">App crafted by <strong>KING</strong></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/modal.js" defer></script>
-  <script src="scripts/animations.js" defer></script>
-  <script src="scripts/pwa.js" defer></script>
-
-  <!-- Modal component -->
-  <!-- Inlined so SPA can find the element quickly; can be moved to server-include or fetch as needed -->
-  <!-- components/modal.html content -->
-  <div class="modal" id="productModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-panel" role="document">
-      <button class="modal-close" aria-label="Close">×</button>
-      <div class="modal-content">
-        <img id="modalImage" src="assets/images/sourdough_bread.png" alt=""
-          style="width:100%;height:auto;border-radius:8px;object-fit:cover;margin-bottom:.75rem">
-        <h2 id="modalTitle">Product title</h2>
-        <p id="modalTags" class="product-tags"></p>
-        <p id="modalDesc" class="product-desc" style="margin-top:.5rem;color:var(--muted)"></p>
-        <div style="margin-top:1rem;display:flex;gap:.5rem;">
-          <button id="modalOrder" class="btn btn-primary">Order Now</button>
-          <button id="modalClose" class="btn btn-ghost">Close</button>
+    <!-- Modal -->
+    <div
+      class="modal"
+      id="productModal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal-overlay"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" aria-label="Close">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="modal-content">
+          <img id="modalImage" src="assets/images/sourdough_bread.png" alt="" />
+          <h2 id="modalTitle">Product title</h2>
+          <p id="modalTags" class="product-tags"></p>
+          <p id="modalDesc" class="product-desc"></p>
+          <div class="modal-actions">
+            <a href="menu.html" id="modalOrder" class="btn btn-primary"
+              >Order Now</a
+            >
+            <button id="modalClose" class="btn btn-ghost">Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Mobile sticky CTA (visible on small screens) -->
-  <div class="mobile-cta" aria-hidden="false" role="region" aria-label="Quick actions">
-    <div class="mobile-cta-inner">
-      <a class="btn btn-primary mobile-cta-btn" href="menu.html" aria-label="Order Now">Order Now</a>
-      <button class="mobile-cta-dismiss" aria-label="Dismiss order call-to-action">×</button>
-    </div>
-  </div>
-  <!-- Bottom Navigation (Mobile) -->
-  <nav class="bottom-nav" aria-label="Quick navigation">
-    <div class="bottom-nav-inner">
-      <a href="index.html" class="bottom-nav-item active" aria-current="page">
-        <span class="bottom-nav-icon">🏠</span>
-        <span>Home</span>
-      </a>
-      <a href="menu.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🍞</span>
-        <span>Menu</span>
-      </a>
-      <a href="catering.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🎂</span>
-        <span>Catering</span>
-      </a>
-      <a href="checkout.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🛒</span>
-        <span>Cart</span>
-        <span class="bottom-nav-badge" id="cartBadge" style="display:none">0</span>
-      </a>
-      <a href="contact.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">📍</span>
-        <span>Contact</span>
-      </a>
-    </div>
-  </nav>
-</body>
 
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/modal.js" defer></script>
+    <script src="scripts/animations.js" defer></script>
+    <script src="scripts/pwa.js" defer></script>
+  </body>
 </html>
