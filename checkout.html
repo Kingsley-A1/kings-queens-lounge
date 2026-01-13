@@ -2,18 +2,25 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Checkout — Sunflour Bakery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — Kings & Queens Restaurant and Lounge</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
 
   <!-- PWA Meta -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#e34a3b">
+  <meta name="theme-color" content="#d4af37">
   <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
 
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/components.css" />
-  <meta name="description" content="Complete your order at Sunflour Bakery. Secure payment options available." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <meta name="description" content="Complete your order from Kings & Queens Restaurant and Lounge.">
 </head>
 
 <body>
@@ -22,168 +29,260 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html">
-        <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="48" height="48" />
-        <span class="brand-name">Sunflour Bakery</span>
+        <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="48" height="48">
+        <span class="brand-name">Kings & Queens</span>
       </a>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav"
-        aria-label="Toggle navigation menu">
-        <span class="nav-toggle-icon"></span>
-      </button>
-      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="catering.html">Catering</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="checkout.html" aria-current="page">Checkout</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="order-success.html">Payment</a></li>
-        </ul>
-      </nav>
+      <div class="checkout-steps">
+        <span class="step completed">Cart</span>
+        <span class="step-divider"></span>
+        <span class="step active">Checkout</span>
+        <span class="step-divider"></span>
+        <span class="step">Confirmation</span>
+      </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="checkout-hero container">
-      <h1>Checkout</h1>
-      <p>Complete your order securely.</p>
-    </section>
-
-    <section class="checkout container">
-      <div class="order-summary">
-        <h2>Order Summary</h2>
-        <div class="items-list" id="orderItems">
-          <!-- Order items will be populated here -->
-        </div>
-
-        <div class="summary-box" aria-hidden="false">
-          <div class="summary-line">
-            <span>Items</span><span id="itemsCount">0</span>
-          </div>
-          <div class="summary-line">
-            <span>Subtotal</span><span id="subtotalPrice">₦0</span>
-          </div>
-          <div class="summary-line">
-            <span>Delivery</span><span id="deliveryPrice">₦200</span>
-          </div>
-          <div class="summary-line">
-            <span>Discount</span><span id="discountPrice">-₦0</span>
-          </div>
-          <div class="summary-total">
-            <span>Total</span><strong id="totalPrice">₦0</strong>
-          </div>
-          <div class="promo-input">
-            <input id="promoCode" placeholder="Promo code (optional)" aria-label="Promo code" />
-            <button id="applyPromo" class="btn btn-ghost">Apply</button>
-          </div>
-          <div class="checkout-actions">
-            <a class="btn btn-primary" href="#" id="placeOrderBtn">Place Order</a>
-            <a class="btn btn-outline" href="menu.html">Continue Shopping</a>
-          </div>
-        </div>
+    <!-- Progress indicator for mobile -->
+    <div class="checkout-progress container">
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 66%"></div>
       </div>
+      <p class="progress-text">Step 2 of 3: Checkout</p>
+    </div>
 
-      <div class="payment-options">
-        <h2>Payment Method</h2>
-        <div class="payment-tabs">
-          <button class="payment-tab active" data-method="bank">
-            Bank Transfer
-          </button>
-          <button class="payment-tab" data-method="card">Card Payment</button>
-        </div>
-
-        <div id="bankTransfer" class="payment-method active">
-          <h3>Bank Transfer Details</h3>
-          <p>Transfer the total amount to the following account:</p>
-          <div class="bank-details">
-            <p><strong>Bank:</strong> First Bank of Nigeria</p>
-            <p><strong>Account Name:</strong> Sunflour Bakery Ltd</p>
-            <p><strong>Account Number:</strong> 1234567890</p>
-            <p>
-              <strong>Reference:</strong> Order #<span id="orderRef">SF001</span>
-            </p>
+    <section class="checkout-section container">
+      <div class="checkout-wrapper">
+        <!-- Checkout Form -->
+        <form class="checkout-form" id="checkoutForm">
+          <!-- Contact Information -->
+          <div class="checkout-card">
+            <h2>Contact Information</h2>
+            <div class="form-row form-row-2">
+              <div class="form-group">
+                <label for="checkoutName">Full Name <span class="required">*</span></label>
+                <input type="text" id="checkoutName" name="name" required autocomplete="name" placeholder="Your full name">
+              </div>
+              <div class="form-group">
+                <label for="checkoutPhone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="checkoutPhone" name="phone" required autocomplete="tel" placeholder="+234 XXX XXX XXXX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="checkoutEmail">Email Address <span class="required">*</span></label>
+              <input type="email" id="checkoutEmail" name="email" required autocomplete="email" placeholder="you@example.com">
+            </div>
           </div>
-          <p>
-            After payment, send proof to
-            <a href="mailto:orders@sunflourbakery.com">orders@sunflourbakery.com</a>
-            or WhatsApp
-            <a href="https://wa.me/2341234567890">+234 123 456 7890</a>.
-          </p>
-          <button class="btn btn-primary" id="confirmBankPayment">
-            I've Made the Transfer
-          </button>
-        </div>
 
-        <div id="cardPayment" class="payment-method">
-          <h3>Card Payment</h3>
-          <form id="cardForm">
-            <div class="form-group">
-              <label for="cardNumber">Card Number</label>
-              <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required />
-            </div>
-            <div class="form-row">
+          <!-- Pickup Details -->
+          <div class="checkout-card">
+            <h2>Pickup Details</h2>
+            <div class="form-row form-row-2">
               <div class="form-group">
-                <label for="expiry">Expiry Date</label>
-                <input type="text" id="expiry" placeholder="MM/YY" required />
+                <label for="pickupDate">Pickup Date <span class="required">*</span></label>
+                <input type="date" id="pickupDate" name="pickupDate" required>
               </div>
               <div class="form-group">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" placeholder="123" required />
+                <label for="pickupTime">Pickup Time <span class="required">*</span></label>
+                <select id="pickupTime" name="pickupTime" required>
+                  <option value="">Select time</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="11:30">11:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                </select>
               </div>
             </div>
             <div class="form-group">
-              <label for="cardName">Cardholder Name</label>
-              <input type="text" id="cardName" placeholder="John Doe" required />
+              <label for="specialInstructions">Special Instructions (Optional)</label>
+              <textarea id="specialInstructions" name="instructions" rows="3" placeholder="Any special requests for your order..."></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Pay Now</button>
-          </form>
-        </div>
+            
+            <div class="pickup-location">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <strong>Pickup Location</strong>
+                <p>Kings & Queens Restaurant<br>123 Royal Avenue, GRA, Calabar</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="checkout-card">
+            <h2>Payment Method</h2>
+            <div class="payment-options">
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="card" checked>
+                <div class="payment-option-content">
+                  <div class="payment-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                      <line x1="1" y1="10" x2="23" y2="10"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Pay with Card</strong>
+                    <p>Secure payment via Paystack</p>
+                  </div>
+                </div>
+              </label>
+              
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="transfer">
+                <div class="payment-option-content">
+                  <div class="payment-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 4H3a2 2 0 00-2 2v12a2 2 0 002 2h18a2 2 0 002-2V6a2 2 0 00-2-2z"/>
+                      <path d="M1 10h22"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Bank Transfer</strong>
+                    <p>Transfer to our account before pickup</p>
+                  </div>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cash">
+                <div class="payment-option-content">
+                  <div class="payment-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="6" width="20" height="12" rx="2"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <strong>Pay on Pickup</strong>
+                    <p>Cash or POS at the restaurant</p>
+                  </div>
+                </div>
+              </label>
+            </div>
+
+            <!-- Bank Transfer Details (shown when transfer selected) -->
+            <div class="bank-details" id="bankDetails" style="display: none;">
+              <h3>Bank Transfer Details</h3>
+              <div class="bank-info">
+                <p><strong>Bank:</strong> Zenith Bank</p>
+                <p><strong>Account Name:</strong> Kings & Queens Restaurant Ltd</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+              </div>
+              <p class="bank-note">Please use your phone number as the payment reference. Your order will be confirmed once we verify your transfer.</p>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <span>Place Order</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Order Summary Sidebar -->
+        <aside class="checkout-summary">
+          <h2>Order Summary</h2>
+          
+          <div class="summary-items">
+            <div class="summary-item">
+              <img src="assets/images/sourdough_bread.png" alt="Royal Grilled Ribeye">
+              <div class="summary-item-details">
+                <h4>Royal Grilled Ribeye</h4>
+                <p>Qty: 1</p>
+              </div>
+              <span class="summary-item-price">₦18,500</span>
+            </div>
+            <div class="summary-item">
+              <img src="assets/images/drinks_category.png" alt="Royal Sunset Cocktail">
+              <div class="summary-item-details">
+                <h4>Royal Sunset Cocktail</h4>
+                <p>Qty: 2</p>
+              </div>
+              <span class="summary-item-price">₦9,000</span>
+            </div>
+          </div>
+
+          <div class="summary-totals">
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span>₦27,500</span>
+            </div>
+            <div class="summary-row">
+              <span>Service Fee (5%)</span>
+              <span>₦1,375</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span>₦28,875</span>
+            </div>
+          </div>
+
+          <a href="cart.html" class="edit-cart">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+            Edit Cart
+          </a>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer site-footer-minimal">
     <div class="container">
-      <p>
-        &copy; <span id="year"></span> Sunflour Bakery — Calabar. All rights
-        reserved.
-      </p>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Kings & Queens Restaurant and Lounge</p>
+        <div class="footer-links-inline">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- Bottom Navigation (Mobile) -->
-  <nav class="bottom-nav" aria-label="Quick navigation">
-    <div class="bottom-nav-inner">
-      <a href="index.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏠</span>
-        <span>Home</span>
-      </a>
-      <a href="menu.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🍞</span>
-        <span>Menu</span>
-      </a>
-      <a href="catering.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🎂</span>
-        <span>Catering</span>
-      </a>
-      <a href="checkout.html" class="bottom-nav-item active" aria-current="page">
-        <span class="bottom-nav-icon">🛒</span>
-        <span>Cart</span>
-      </a>
-      <a href="contact.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">📍</span>
-        <span>Contact</span>
-      </a>
-    </div>
-  </nav>
-
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/checkout.js" defer></script>
-  <script src="scripts/animations.js" defer></script>
-  <script src="scripts/pwa.js" defer></script>
+  <script>
+    // Set minimum date to today
+    document.getElementById('pickupDate').min = new Date().toISOString().split('T')[0];
+
+    // Toggle bank details visibility
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        document.getElementById('bankDetails').style.display = 
+          this.value === 'transfer' ? 'block' : 'none';
+      });
+    });
+
+    // Form submission
+    document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      
+      if (paymentMethod === 'card') {
+        // In real app, integrate with Paystack
+        alert('Redirecting to Paystack for secure payment...');
+      }
+      
+      // Redirect to success page
+      window.location.href = 'order-success.html';
+    });
+  </script>
 </body>
 
 </html>

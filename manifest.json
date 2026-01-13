@@ -1,11 +1,12 @@
 {
-  "name": "Sunflour Bakery — Calabar",
-  "short_name": "Sunflour",
-  "description": "Fresh breads, cakes, pastries and fast foods baked daily in Calabar. Order online for delivery or pickup.",
+  "name": "Kings & Queens Restaurant and Lounge",
+  "short_name": "Kings & Queens",
+  "description": "Experience fine dining, craft cocktails, and unforgettable moments. Dine like royalty at Calabar's premier restaurant and lounge.",
   "start_url": "/index.html",
+  "id": "kings-queens-restaurant-lounge-calabar",
   "display": "standalone",
-  "background_color": "#fff8f5",
-  "theme_color": "#e34a3b",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4af37",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -15,7 +16,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["food", "shopping", "lifestyle"],
+  "categories": ["food", "restaurants", "lifestyle", "entertainment"],
   "lang": "en",
   "dir": "ltr",
   "screenshots": [],
@@ -23,15 +24,22 @@
     {
       "name": "Browse Menu",
       "short_name": "Menu",
-      "description": "View our delicious menu",
+      "description": "View our exquisite menu",
       "url": "/menu.html",
       "icons": []
     },
     {
-      "name": "Catering Request",
-      "short_name": "Catering",
-      "description": "Request catering for your event",
-      "url": "/catering.html",
+      "name": "Make Reservation",
+      "short_name": "Reserve",
+      "description": "Book your royal dining experience",
+      "url": "/reservations.html",
+      "icons": []
+    },
+    {
+      "name": "Private Events",
+      "short_name": "Events",
+      "description": "Host your special occasion",
+      "url": "/events.html",
       "icons": []
     }
   ]

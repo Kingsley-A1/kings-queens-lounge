@@ -2,618 +2,181 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Order Successful — Sunflour Bakery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Order Confirmed — Kings & Queens Restaurant and Lounge</title>
 
-    <!-- PWA Meta -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#e34a3b">
-    <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
 
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/components.css" />
-    <meta name="description" content="Your order has been placed successfully at Sunflour Bakery!" />
+  <!-- PWA Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d4af37">
+  <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
 
-    <style>
-        /* Confetti Animation */
-        .confetti-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: 1000;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            opacity: 0;
-            animation: confetti-fall 3s ease-out forwards;
-        }
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
 
-        .confetti:nth-child(odd) {
-            border-radius: 50%;
-        }
-
-        @keyframes confetti-fall {
-            0% {
-                opacity: 1;
-                transform: translateY(-100px) rotate(0deg);
-            }
-
-            100% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(720deg);
-            }
-        }
-
-        /* Success Hero */
-        .success-hero {
-            text-align: center;
-            padding: var(--sf-space-3xl, 4rem) 0 var(--sf-space-xl, 2rem);
-            background: linear-gradient(180deg, rgba(34, 197, 94, 0.08) 0%, var(--sf-white, #fff) 100%);
-        }
-
-        .success-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto var(--sf-space-lg, 1.5rem);
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: success-pop 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
-
-        @keyframes success-pop {
-            0% {
-                transform: scale(0);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .success-icon svg {
-            width: 50px;
-            height: 50px;
-            color: white;
-        }
-
-        .success-hero h1 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            color: #22c55e;
-            margin-bottom: 0.5rem;
-        }
-
-        .success-hero p {
-            color: var(--muted, #737373);
-            font-size: 1.1rem;
-        }
-
-        /* Order Details Section */
-        .order-details-section {
-            padding: var(--sf-space-xl, 2rem) 0 var(--sf-space-3xl, 4rem);
-        }
-
-        .order-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--sf-space-xl, 2rem);
-        }
-
-        @media (min-width: 900px) {
-            .order-layout {
-                grid-template-columns: 1fr 400px;
-            }
-        }
-
-        /* Receipt Card */
-        .receipt-card {
-            background: var(--sf-white, #fff);
-            border-radius: var(--sf-radius-xl, 24px);
-            padding: var(--sf-space-xl, 2rem);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            border: 2px dashed #e5e5e5;
-        }
-
-        .receipt-header {
-            text-align: center;
-            padding-bottom: var(--sf-space-lg, 1.5rem);
-            border-bottom: 1px dashed #e5e5e5;
-            margin-bottom: var(--sf-space-lg, 1.5rem);
-        }
-
-        .receipt-logo {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 0.5rem;
-        }
-
-        .receipt-header h2 {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .receipt-header p {
-            color: var(--muted, #737373);
-            font-size: 0.85rem;
-        }
-
-        .receipt-order-id {
-            background: var(--sf-cream, #fff8f5);
-            padding: 0.75rem 1rem;
-            border-radius: var(--sf-radius-md, 12px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: var(--sf-space-lg, 1.5rem);
-        }
-
-        .receipt-order-id span {
-            color: var(--muted, #737373);
-            font-size: 0.9rem;
-        }
-
-        .receipt-order-id strong {
-            font-family: var(--font-mono, monospace);
-            color: var(--sf-red, #e34a3b);
-        }
-
-        .receipt-items {
-            margin-bottom: var(--sf-space-lg, 1.5rem);
-        }
-
-        .receipt-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f3f3;
-        }
-
-        .receipt-item:last-child {
-            border-bottom: none;
-        }
-
-        .receipt-item-info {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .receipt-item-img {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--sf-radius-md, 12px);
-            object-fit: cover;
-        }
-
-        .receipt-item-name {
-            font-weight: 500;
-        }
-
-        .receipt-item-qty {
-            font-size: 0.85rem;
-            color: var(--muted, #737373);
-        }
-
-        .receipt-item-price {
-            font-weight: 600;
-        }
-
-        .receipt-totals {
-            padding-top: var(--sf-space-md, 1rem);
-            border-top: 1px dashed #e5e5e5;
-        }
-
-        .receipt-total-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-        }
-
-        .receipt-total-row span {
-            color: var(--muted, #737373);
-        }
-
-        .receipt-total-row.final {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text, #1a1a1a);
-            padding-top: 0.75rem;
-            margin-top: 0.5rem;
-            border-top: 2px solid var(--sf-red, #e34a3b);
-        }
-
-        .receipt-total-row.final span {
-            color: var(--text, #1a1a1a);
-        }
-
-        /* Order Info Card */
-        .order-info-card {
-            background: var(--sf-white, #fff);
-            border-radius: var(--sf-radius-xl, 24px);
-            padding: var(--sf-space-xl, 2rem);
-            box-shadow: var(--sf-shadow-md, 0 4px 16px rgba(0, 0, 0, 0.08));
-        }
-
-        .order-info-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: var(--sf-space-md, 1rem);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f3f3;
-        }
-
-        .info-row:last-child {
-            border-bottom: none;
-        }
-
-        .info-label {
-            color: var(--muted, #737373);
-            font-size: 0.9rem;
-        }
-
-        .info-value {
-            font-weight: 500;
-            text-align: right;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(34, 197, 94, 0.1);
-            color: #16a34a;
-            border-radius: var(--sf-radius-full, 9999px);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .order-actions {
-            margin-top: var(--sf-space-xl, 2rem);
-            display: flex;
-            flex-direction: column;
-            gap: var(--sf-space-md, 1rem);
-        }
-
-        .share-order {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: var(--sf-space-md, 1rem);
-        }
-
-        .share-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .share-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .share-btn.copy {
-            background: var(--sf-gray-200, #e5e5e5);
-            color: var(--text, #1a1a1a);
-        }
-
-        .share-btn:hover {
-            transform: scale(1.1);
-        }
-    </style>
+  <meta name="description" content="Your order has been confirmed at Kings & Queens Restaurant and Lounge.">
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Confetti Container -->
-    <div class="confetti-container" id="confettiContainer"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="48" height="48">
+        <span class="brand-name">Kings & Queens</span>
+      </a>
+      <div class="checkout-steps">
+        <span class="step completed">Cart</span>
+        <span class="step-divider"></span>
+        <span class="step completed">Checkout</span>
+        <span class="step-divider"></span>
+        <span class="step active">Confirmation</span>
+      </div>
+    </div>
+  </header>
 
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">
-                <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="48" height="48" />
-                <span class="brand-name">Sunflour Bakery</span>
-            </a>
-            <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav"
-                aria-label="Toggle navigation menu">
-                <span class="nav-toggle-icon"></span>
-            </button>
-            <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="order-success.html" aria-current="page">Payment</a></li>
-                </ul>
-            </nav>
+  <main id="main-content">
+    <section class="success-section container">
+      <div class="success-content animate-on-scroll">
+        <!-- Success Icon -->
+        <div class="success-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="16 10 10.5 15.5 8 13"/>
+          </svg>
         </div>
-    </header>
 
-    <main id="main-content">
-        <!-- Success Hero -->
-        <section class="success-hero">
-            <div class="container">
-                <div class="success-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                </div>
-                <h1>Payment Successful! 🎉</h1>
-                <p>Thank you for your order. Your delicious treats are being prepared!</p>
+        <h1>Order <span class="text-gold">Confirmed!</span></h1>
+        <p class="success-message">Thank you for your order. We're preparing something delicious for you!</p>
+
+        <!-- Order Details Card -->
+        <div class="order-card">
+          <div class="order-header">
+            <div>
+              <span class="order-label">Order Number</span>
+              <strong class="order-number">#KQ-2026-0113</strong>
             </div>
-        </section>
+            <span class="order-status">Confirmed</span>
+          </div>
 
-        <!-- Order Details -->
-        <section class="order-details-section">
-            <div class="container">
-                <div class="order-layout">
-                    <!-- Receipt -->
-                    <div class="receipt-card">
-                        <div class="receipt-header">
-                            <img src="assets/icons/icon-512.png" alt="Sunflour Bakery" class="receipt-logo">
-                            <h2>Sunflour Bakery</h2>
-                            <p>42 Calabar Road, Calabar, Nigeria</p>
-                        </div>
-
-                        <div class="receipt-order-id">
-                            <span>Order ID</span>
-                            <strong>#SF-2024-7842</strong>
-                        </div>
-
-                        <div class="receipt-items">
-                            <h3 style="margin-bottom: 1rem; font-size: 1rem;">Purchased Items</h3>
-
-                            <div class="receipt-item">
-                                <div class="receipt-item-info">
-                                    <img src="assets/images/sourdough_bread.png" alt="Country Loaf"
-                                        class="receipt-item-img">
-                                    <div>
-                                        <div class="receipt-item-name">Signature Country Loaf</div>
-                                        <div class="receipt-item-qty">Qty: 2</div>
-                                    </div>
-                                </div>
-                                <span class="receipt-item-price">₦1,600</span>
-                            </div>
-
-                            <div class="receipt-item">
-                                <div class="receipt-item-info">
-                                    <img src="assets/images/chocolate_cake.png" alt="Chocolate Cake"
-                                        class="receipt-item-img">
-                                    <div>
-                                        <div class="receipt-item-name">Belgian Chocolate Cake</div>
-                                        <div class="receipt-item-qty">Qty: 1</div>
-                                    </div>
-                                </div>
-                                <span class="receipt-item-price">₦4,500</span>
-                            </div>
-
-                            <div class="receipt-item">
-                                <div class="receipt-item-info">
-                                    <img src="assets/images/butter_croissant.png" alt="Croissants"
-                                        class="receipt-item-img">
-                                    <div>
-                                        <div class="receipt-item-name">Butter Croissants (6pc)</div>
-                                        <div class="receipt-item-qty">Qty: 1</div>
-                                    </div>
-                                </div>
-                                <span class="receipt-item-price">₦1,800</span>
-                            </div>
-                        </div>
-
-                        <div class="receipt-totals">
-                            <div class="receipt-total-row">
-                                <span>Subtotal</span>
-                                <strong>₦7,900</strong>
-                            </div>
-                            <div class="receipt-total-row">
-                                <span>Delivery Fee</span>
-                                <strong>₦500</strong>
-                            </div>
-                            <div class="receipt-total-row">
-                                <span>Discount (FRESHBAKE10)</span>
-                                <strong style="color: #22c55e;">-₦790</strong>
-                            </div>
-                            <div class="receipt-total-row final">
-                                <span>Total Paid</span>
-                                <strong>₦7,610</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Order Info -->
-                    <div>
-                        <div class="order-info-card" style="margin-bottom: 1.5rem;">
-                            <h3>📦 Delivery Information</h3>
-                            <div class="info-row">
-                                <span class="info-label">Delivery To</span>
-                                <span class="info-value">John Doe</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Address</span>
-                                <span class="info-value">15 Marina Road, Calabar</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Phone</span>
-                                <span class="info-value">+234 903 682 6272</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Est. Delivery</span>
-                                <span class="info-value">Today, 2:30 PM - 3:30 PM</span>
-                            </div>
-                        </div>
-
-                        <div class="order-info-card" style="margin-bottom: 1.5rem;">
-                            <h3>💳 Payment Details</h3>
-                            <div class="info-row">
-                                <span class="info-label">Payment Method</span>
-                                <span class="info-value">Bank Transfer</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Transaction ID</span>
-                                <span class="info-value" style="font-family: monospace;">#TXN-4829571</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Date & Time</span>
-                                <span class="info-value">Dec 11, 2024 • 5:15 PM</span>
-                            </div>
-                            <div class="info-row">
-                                <span class="info-label">Status</span>
-                                <span class="status-badge">✓ Confirmed</span>
-                            </div>
-                        </div>
-
-                        <div class="order-actions">
-                            <a href="menu.html" class="btn btn-primary btn-full">Continue Shopping</a>
-                            <button class="btn btn-outline btn-full" onclick="window.print()">🖨️ Print Receipt</button>
-
-                            <div class="share-order">
-                                <a href="https://wa.me/2349036826272?text=Hi! I just placed order %23SF-2024-7842 at Sunflour Bakery!"
-                                    target="_blank" class="share-btn whatsapp" aria-label="Share on WhatsApp">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                                    </svg>
-                                </a>
-                                <button class="share-btn copy"
-                                    onclick="navigator.clipboard.writeText('Order #SF-2024-7842'); alert('Order ID copied!');"
-                                    aria-label="Copy order ID">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                                        <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="order-info-grid">
+            <div class="order-info-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <div>
+                <span class="info-label">Pickup Date</span>
+                <strong>January 14, 2026</strong>
+              </div>
             </div>
-        </section>
-    </main>
+            <div class="order-info-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <span class="info-label">Pickup Time</span>
+                <strong>7:00 PM</strong>
+              </div>
+            </div>
+            <div class="order-info-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <div>
+                <span class="info-label">Location</span>
+                <strong>123 Royal Avenue, GRA</strong>
+              </div>
+            </div>
+            <div class="order-info-item">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="6" width="20" height="12" rx="2"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <div>
+                <span class="info-label">Payment</span>
+                <strong>Pay on Pickup</strong>
+              </div>
+            </div>
+          </div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="40" height="40">
-                    <span>Sunflour Bakery</span>
-                </div>
-                <div class="footer-links">
-                    <a href="menu.html">Menu</a>
-                    <a href="about.html">About</a>
-                    <a href="catering.html">Catering</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="blog.html">Blog</a>
-                </div>
-                <div class="footer-contact">
-                    <a href="https://wa.me/2349036826272" target="_blank" rel="noopener" class="whatsapp-link"
-                        aria-label="Chat on WhatsApp">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        <span>Chat with us</span>
-                    </a>
-                </div>
+          <div class="order-items">
+            <h3>Order Items</h3>
+            <div class="order-item">
+              <span class="item-qty">1×</span>
+              <span class="item-name">Royal Grilled Ribeye</span>
+              <span class="item-price">₦18,500</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="year"></span> Sunflour Bakery — Calabar. All rights reserved.</p>
-                <p class="crafted-by">App crafted by <strong>KING</strong></p>
+            <div class="order-item">
+              <span class="item-qty">2×</span>
+              <span class="item-name">Royal Sunset Cocktail</span>
+              <span class="item-price">₦9,000</span>
             </div>
+          </div>
+
+          <div class="order-total">
+            <span>Total Amount</span>
+            <strong>₦28,875</strong>
+          </div>
         </div>
-    </footer>
 
-    <!-- Bottom Navigation (Mobile) -->
-    <nav class="bottom-nav" aria-label="Quick navigation">
-        <div class="bottom-nav-inner">
-            <a href="index.html" class="bottom-nav-item">
-                <span class="bottom-nav-icon">🏠</span>
-                <span>Home</span>
-            </a>
-            <a href="menu.html" class="bottom-nav-item">
-                <span class="bottom-nav-icon">🍞</span>
-                <span>Menu</span>
-            </a>
-            <a href="catering.html" class="bottom-nav-item">
-                <span class="bottom-nav-icon">🎂</span>
-                <span>Catering</span>
-            </a>
-            <a href="cart.html" class="bottom-nav-item">
-                <span class="bottom-nav-icon">🛒</span>
-                <span>Cart</span>
-            </a>
-            <a href="contact.html" class="bottom-nav-item">
-                <span class="bottom-nav-icon">📍</span>
-                <span>Contact</span>
-            </a>
+        <!-- Confirmation Email Notice -->
+        <div class="email-notice">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <p>A confirmation email has been sent to <strong>your@email.com</strong></p>
         </div>
-    </nav>
 
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/pwa.js" defer></script>
+        <!-- Action Buttons -->
+        <div class="success-actions">
+          <a href="index.html" class="btn btn-primary btn-lg">
+            <span>Back to Home</span>
+          </a>
+          <a href="menu.html" class="btn btn-outline btn-lg">
+            <span>Order Again</span>
+          </a>
+        </div>
 
-    <!-- Confetti Script -->
-    <script>
-        // Generate confetti on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            const container = document.getElementById('confettiContainer');
-            const colors = ['#e34a3b', '#ff8c3a', '#22c55e', '#3b82f6', '#a855f7', '#f59e0b'];
+        <!-- Contact Info -->
+        <div class="pickup-help">
+          <h3>Need Help?</h3>
+          <p>If you have any questions about your order, please contact us:</p>
+          <a href="tel:+2349036826272" class="help-phone">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            +234 903 682 6272
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            // Create 100 confetti pieces
-            for (let i = 0; i < 100; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.animationDelay = Math.random() * 2 + 's';
-                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                confetti.style.height = (Math.random() * 10 + 5) + 'px';
-                container.appendChild(confetti);
-            }
+  <footer class="site-footer site-footer-minimal">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Kings & Queens Restaurant and Lounge</p>
+        <div class="footer-links-inline">
+          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-            // Remove confetti after animation
-            setTimeout(() => {
-                container.innerHTML = '';
-            }, 5000);
-        });
-    </script>
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/animations.js" defer></script>
 </body>
 
 </html>

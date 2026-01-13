@@ -1,59 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Verify — Sunflour Bakery</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/components.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="index.html">
-          <img
-            src="assets/logo-placeholder.svg"
-            alt="Sunflour Bakery logo"
-            width="48"
-            height="48"
-          />
-          <span class="brand-name">Sunflour Bakery</span>
-        </a>
-      </div>
-    </header>
 
-    <main>
-      <section class="auth-hero">
-        <div class="container">
-          <h1>Verify your account</h1>
-          <p>Enter the 6-digit code we sent to your phone or email.</p>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Verify Your Email — Kings & Queens Restaurant and Lounge</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+
+  <!-- PWA Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d4af37">
+  <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <meta name="robots" content="noindex, nofollow">
+</head>
+
+<body class="auth-page">
+  <main id="main-content" class="auth-main verify-main">
+    <div class="verify-container">
+      <a href="index.html" class="verify-logo">
+        <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="80" height="80">
+      </a>
+
+      <div class="verify-content">
+        <!-- Email Icon -->
+        <div class="verify-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
         </div>
-      </section>
 
-      <section class="container">
-        <form id="verifyForm" class="auth-form" novalidate>
-          <h2>Enter verification code</h2>
-          <div class="form-group">
-            <label for="code">Verification code</label>
-            <input
-              id="code"
-              name="code"
-              inputmode="numeric"
-              pattern="[0-9]{6}"
-              required
-              placeholder="123456"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary">Verify</button>
-          <div class="auth-helpers">
-            <a href="register.html">Back to register</a>
-            <a href="index.html">Back to shop</a>
-          </div>
-        </form>
-      </section>
-    </main>
+        <h1>Check Your <span class="text-gold">Email</span></h1>
+        <p class="verify-message">We've sent a verification link to</p>
+        <p class="verify-email"><strong>your@email.com</strong></p>
 
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/auth.js" defer></script>
-  </body>
+        <p class="verify-instructions">Click the link in the email to verify your account. If you don't see it, check your spam folder.</p>
+
+        <!-- Resend Link -->
+        <div class="verify-resend">
+          <p>Didn't receive the email?</p>
+          <button class="btn btn-outline" id="resendBtn">Resend Verification Email</button>
+        </div>
+
+        <!-- Alternative Actions -->
+        <div class="verify-actions">
+          <a href="login.html" class="btn btn-primary btn-lg">
+            <span>Go to Login</span>
+          </a>
+        </div>
+
+        <!-- Support -->
+        <div class="verify-help">
+          <p>Having trouble? <a href="contact.html">Contact Support</a></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Resend verification email
+    document.getElementById('resendBtn').addEventListener('click', function() {
+      this.disabled = true;
+      this.textContent = 'Sending...';
+      
+      setTimeout(() => {
+        this.textContent = 'Email Sent!';
+        setTimeout(() => {
+          this.disabled = false;
+          this.textContent = 'Resend Verification Email';
+        }, 3000);
+      }, 1500);
+    });
+  </script>
+</body>
+
 </html>

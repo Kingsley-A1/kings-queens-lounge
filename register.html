@@ -2,167 +2,211 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Register — Sunflour Bakery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Create Account — Kings & Queens Restaurant and Lounge</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
 
   <!-- PWA Meta -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#e34a3b">
+  <meta name="theme-color" content="#d4af37">
   <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
 
-  <link rel="stylesheet" href="styles/styles.css" />
-  <link rel="stylesheet" href="styles/components.css" />
-  <meta name="description"
-    content="Create your Sunflour Bakery account to order online, track deliveries, and get exclusive offers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/components.css">
+
+  <meta name="description" content="Create your Kings & Queens account to manage reservations and enjoy exclusive member benefits.">
 </head>
 
-<body>
+<body class="auth-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/icons/icon-512.png" alt="Sunflour Bakery logo" width="48" height="48" />
-        <span class="brand-name">Sunflour Bakery</span>
-      </a>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav"
-        aria-label="Toggle navigation menu">
-        <span class="nav-toggle-icon"></span>
-      </button>
-      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="catering.html">Catering</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="checkout.html">Checkout</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html" aria-current="page">Register</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="order-success.html">Payment</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <!-- Auth Hero -->
-    <section class="auth-hero-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-badge">Join Us</span>
-          <h1>Create your account</h1>
-          <p class="section-sub">Sign up to save orders, checkout faster, and access exclusive member offers.</p>
+  <main id="main-content" class="auth-main">
+    <div class="auth-container">
+      <!-- Left side - Branding -->
+      <div class="auth-brand">
+        <a href="index.html" class="auth-logo">
+          <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="80" height="80">
+        </a>
+        <h1>Kings & Queens</h1>
+        <p class="auth-tagline">Dine Like Royalty</p>
+        <div class="auth-features">
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Priority reservations</span>
+          </div>
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Birthday rewards</span>
+          </div>
+          <div class="auth-feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+            <span>Exclusive event access</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Register Form -->
-    <section class="auth-section">
-      <div class="container">
-        <form id="registerForm" class="auth-card" novalidate>
-          <div class="auth-card-header">
-            <h2>Register</h2>
-            <p>Fill in your details to get started</p>
-          </div>
+      <!-- Right side - Form -->
+      <div class="auth-form-wrapper">
+        <div class="auth-form-header">
+          <h2>Create Account</h2>
+          <p>Join the royal family and unlock exclusive benefits</p>
+        </div>
 
-          <div class="form-row-2col">
+        <form class="auth-form" id="registerForm">
+          <div class="form-row form-row-2">
             <div class="form-group">
-              <label for="regFirstName">First name</label>
-              <input id="regFirstName" name="firstName" required placeholder="Jane" autocomplete="given-name" />
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name" placeholder="First name">
             </div>
             <div class="form-group">
-              <label for="regLastName">Last name</label>
-              <input id="regLastName" name="lastName" required placeholder="Doe" autocomplete="family-name" />
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name" placeholder="Last name">
             </div>
           </div>
 
           <div class="form-group">
-            <label for="regEmail">Email address</label>
-            <input id="regEmail" name="email" type="email" required placeholder="you@example.com"
-              autocomplete="email" />
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" name="email" required autocomplete="email" placeholder="you@example.com">
           </div>
 
           <div class="form-group">
-            <label for="regPhone">Phone number</label>
-            <input id="regPhone" name="phone" type="tel" required placeholder="+234 812 345 6789" autocomplete="tel" />
+            <label for="regPhone">Phone Number</label>
+            <input type="tel" id="regPhone" name="phone" required autocomplete="tel" placeholder="+234 XXX XXX XXXX">
           </div>
 
           <div class="form-group">
             <label for="regPassword">Password</label>
-            <input id="regPassword" name="password" type="password" required
-              placeholder="Choose a strong password (min 8 characters)" autocomplete="new-password" minlength="8" />
+            <div class="password-input-wrapper">
+              <input type="password" id="regPassword" name="password" required autocomplete="new-password" placeholder="Create a strong password" minlength="8">
+              <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                <svg class="eye-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg class="eye-closed" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                  <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+            <p class="form-hint">Minimum 8 characters</p>
           </div>
 
           <div class="form-group">
-            <label for="regConfirmPassword">Confirm password</label>
-            <input id="regConfirmPassword" name="confirmPassword" type="password" required
-              placeholder="Re-enter your password" autocomplete="new-password" />
+            <label for="regConfirmPassword">Confirm Password</label>
+            <input type="password" id="regConfirmPassword" name="confirmPassword" required autocomplete="new-password" placeholder="Confirm your password">
           </div>
 
-          <label class="checkbox-label">
-            <input type="checkbox" name="terms" required />
-            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
-          </label>
-
-          <label class="checkbox-label">
-            <input type="checkbox" name="newsletter" />
-            <span>Subscribe to our newsletter for exclusive offers</span>
-          </label>
-
-          <button type="submit" class="btn btn-primary btn-full">Create Account</button>
-
-          <div class="auth-divider">
-            <span>or</span>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="terms" required>
+              <span class="checkmark"></span>
+              I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
+            </label>
           </div>
 
-          <div class="auth-helpers">
-            <p>Already have an account? <a href="login.html">Sign in</a></p>
-            <a href="index.html" class="back-link">← Back to shop</a>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="newsletter">
+              <span class="checkmark"></span>
+              Send me special offers and updates (optional)
+            </label>
           </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-full">
+            <span>Create Account</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
         </form>
+
+        <div class="auth-divider">
+          <span>or sign up with</span>
+        </div>
+
+        <div class="social-auth">
+          <button class="btn btn-social btn-google">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            <span>Google</span>
+          </button>
+          <button class="btn btn-social btn-facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+            <span>Facebook</span>
+          </button>
+        </div>
+
+        <p class="auth-switch">
+          Already have an account? <a href="login.html">Sign in</a>
+        </p>
+
+        <a href="index.html" class="back-home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to Home
+        </a>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>
-        &copy; <span id="year"></span> Sunflour Bakery — Calabar. All rights reserved.
-      </p>
-    </div>
-  </footer>
-
-  <!-- Bottom Navigation (Mobile) -->
-  <nav class="bottom-nav" aria-label="Quick navigation">
-    <div class="bottom-nav-inner">
-      <a href="index.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🏠</span>
-        <span>Home</span>
-      </a>
-      <a href="menu.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🍞</span>
-        <span>Menu</span>
-      </a>
-      <a href="catering.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🎂</span>
-        <span>Catering</span>
-      </a>
-      <a href="checkout.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">🛒</span>
-        <span>Cart</span>
-      </a>
-      <a href="contact.html" class="bottom-nav-item">
-        <span class="bottom-nav-icon">📍</span>
-        <span>Contact</span>
-      </a>
-    </div>
-  </nav>
-
   <script src="scripts/main.js" defer></script>
-  <script src="scripts/pwa.js" defer></script>
+  <script src="scripts/auth.js" defer></script>
+  <script>
+    // Password toggle
+    document.querySelectorAll('.password-toggle').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const input = this.previousElementSibling;
+        const eyeOpen = this.querySelector('.eye-open');
+        const eyeClosed = this.querySelector('.eye-closed');
+        
+        if (input.type === 'password') {
+          input.type = 'text';
+          eyeOpen.style.display = 'none';
+          eyeClosed.style.display = 'block';
+        } else {
+          input.type = 'password';
+          eyeOpen.style.display = 'block';
+          eyeClosed.style.display = 'none';
+        }
+      });
+    });
+
+    // Form submission with validation
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+      }
+      
+      // Simulated registration
+      alert('Account created successfully! Please check your email to verify your account.');
+      window.location.href = 'verify.html';
+    });
+  </script>
 </body>
 
 </html>
