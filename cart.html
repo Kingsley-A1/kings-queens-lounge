@@ -21,6 +21,17 @@
   <link rel="stylesheet" href="styles/components.css">
 
   <meta name="description" content="Review your order from Kings & Queens Restaurant and Lounge.">
+  <meta property="og:title" content="Your Cart — Kings & Queens Restaurant and Lounge">
+  <meta property="og:description" content="Review your order, update quantities, and proceed to checkout.">
+  <meta property="og:image" content="https://kingsandqueenslounge.com/assets/images/og-share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kings & Queens Restaurant and Lounge">
+  <meta property="og:url" content="https://kingsandqueenslounge.com/cart.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kingsandqueenslounge.com/assets/images/og-share.jpg">
 </head>
 
 <body>
@@ -36,7 +47,7 @@
         <span class="nav-toggle-icon"></span>
       </button>
       <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-        <ul>
+        <ul class="nav-desktop-only">
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="about.html">About</a></li>
@@ -45,6 +56,26 @@
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" aria-current="page">Cart</a></li>
+        </ul>
+        <ul class="nav-mobile-only">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="reservations.html">Reservations</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" aria-current="page">Cart</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="order-success.html">Order Status</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="verify.html">Verify</a></li>
+          <li><a href="logout.html">Logout</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
         </ul>
       </nav>
     </div>
@@ -63,7 +94,7 @@
 
     <!-- Cart Content -->
     <section class="cart-section container">
-      <div class="cart-wrapper">
+      <div class="cart-layout">
         <!-- Cart Items -->
         <div class="cart-items" id="cartItems">
           <!-- Empty state -->
@@ -83,22 +114,20 @@
           <div class="cart-items-list" id="cartItemsList" style="display: none;">
             <!-- Sample item structure -->
             <article class="cart-item">
-              <div class="cart-item-image">
-                <img src="assets/images/sourdough_bread.png" alt="Royal Grilled Ribeye" loading="lazy">
-              </div>
+              <img class="cart-item-image" src="assets/images/sourdough_bread.png" alt="Royal Grilled Ribeye" loading="lazy">
               <div class="cart-item-details">
-                <h3>Royal Grilled Ribeye</h3>
+                <h4>Royal Grilled Ribeye</h4>
                 <p class="cart-item-price">₦18,500</p>
                 <p class="cart-item-notes">Special request: Medium rare</p>
               </div>
-              <div class="cart-item-quantity">
-                <button class="qty-btn" data-action="decrease" aria-label="Decrease quantity">
+              <div class="cart-item-quantity quantity-controls" aria-label="Quantity selector">
+                <button class="qty-btn quantity-btn" data-action="decrease" aria-label="Decrease quantity">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>
                   </svg>
                 </button>
-                <span class="qty-value">1</span>
-                <button class="qty-btn" data-action="increase" aria-label="Increase quantity">
+                <span class="qty-value qty-display">1</span>
+                <button class="qty-btn quantity-btn" data-action="increase" aria-label="Increase quantity">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
                   </svg>
@@ -112,21 +141,19 @@
             </article>
 
             <article class="cart-item">
-              <div class="cart-item-image">
-                <img src="assets/images/drinks_category.png" alt="Signature Cocktail" loading="lazy">
-              </div>
+              <img class="cart-item-image" src="assets/images/drinks_category.png" alt="Signature Cocktail" loading="lazy">
               <div class="cart-item-details">
-                <h3>Royal Sunset Cocktail</h3>
+                <h4>Royal Sunset Cocktail</h4>
                 <p class="cart-item-price">₦4,500</p>
               </div>
-              <div class="cart-item-quantity">
-                <button class="qty-btn" data-action="decrease" aria-label="Decrease quantity">
+              <div class="cart-item-quantity quantity-controls" aria-label="Quantity selector">
+                <button class="qty-btn quantity-btn" data-action="decrease" aria-label="Decrease quantity">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"/>
                   </svg>
                 </button>
-                <span class="qty-value">2</span>
-                <button class="qty-btn" data-action="increase" aria-label="Increase quantity">
+                <span class="qty-value qty-display">2</span>
+                <button class="qty-btn quantity-btn" data-action="increase" aria-label="Increase quantity">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
                   </svg>
