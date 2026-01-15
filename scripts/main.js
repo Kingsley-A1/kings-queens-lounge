@@ -173,8 +173,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const titleEl = card.querySelector(".product-title");
     const imgEl = card.querySelector(".product-image");
     const tagsEl = card.querySelector(".product-tags");
+    const priceEl = card.querySelector(".product-price");
     const descEl = card.querySelector(".product-desc");
-    const price = parsePriceFromText(tagsEl ? tagsEl.textContent : "");
+    const price = parsePriceFromText(
+      priceEl ? priceEl.textContent : tagsEl ? tagsEl.textContent : ""
+    );
     return {
       id: null,
       title: titleEl ? titleEl.textContent.trim() : "Product",
@@ -196,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.textContent ||
       ""
     ).toLowerCase();
-    if (label.includes("order")) {
+    if (label.includes("order") || label.includes("add to cart") || label.includes("add")) {
       const product = extractProductFromCard(card);
       if (product) {
         const order = JSON.parse(localStorage.getItem("sunflourOrder") || "[]");

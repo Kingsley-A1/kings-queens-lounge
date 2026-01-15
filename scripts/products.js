@@ -220,6 +220,16 @@ const badgeColors = {
   "Great for Gifts": { bg: "#8b5cf6", color: "#fff" }
 };
 
+// Category label mapping
+const categoryLabels = {
+  breads: "Breads",
+  cakes: "Cakes",
+  pastries: "Pastries",
+  fastfoods: "Fast Foods",
+  drinks: "Drinks",
+  more: "More"
+};
+
 // Star rating helper
 function renderStars(rating) {
   const full = Math.floor(rating);
@@ -236,26 +246,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = document.createElement("article");
     card.className = "product-card";
     card.setAttribute("data-category", product.category);
+    card.setAttribute("role", "group");
+    card.setAttribute("aria-labelledby", `product-title-${product.id}`);
+    card.setAttribute(
+      "aria-describedby",
+      `product-desc-${product.id} product-price-${product.id}`
+    );
 
     const badgeHTML = product.badge
       ? `<span class="product-badge" style="background:${badgeColors[product.badge]?.bg || '#e34a3b'};color:${badgeColors[product.badge]?.color || '#fff'}">${product.badge}</span>`
       : '';
 
+    const categoryLabel = categoryLabels[product.category] || "Menu";
     card.innerHTML = `
       <div class="product-image-wrapper">
         ${badgeHTML}
         <img class="product-image" src="${product.image}" alt="${product.alt}" loading="lazy">
       </div>
       <div class="product-body">
-        <h3 class="product-title">${product.title}</h3>
+        <h3 class="product-title" id="product-title-${product.id}">${product.title}</h3>
         <div class="product-meta">
           <span class="product-rating" aria-label="Rating ${product.rating} out of 5">${renderStars(product.rating)} <small>${product.rating}</small></span>
-          <span class="product-price">₦${product.price.toLocaleString()}</span>
+          <span class="product-price" id="product-price-${product.id}">₦${product.price.toLocaleString()}</span>
         </div>
-        <p class="product-desc">${product.desc}</p>
-        <div class="product-actions">
-          <button class="btn btn-small btn-primary" data-action="order" data-id="${product.id}" aria-label="Order ${product.title}">Order Now</button>
-          <button class="btn btn-ghost btn-small" data-action="quickview" aria-label="Quick view ${product.title}">Quick View</button>
+        <p class="product-tags">Category: ${categoryLabel}</p>
+        <p class="product-desc" id="product-desc-${product.id}">${product.desc}</p>
+        <div class="product-actions" role="group" aria-label="Actions for ${product.title}">
+          <button type="button" class="btn btn-small btn-primary" data-action="order" data-id="${product.id}" aria-label="Add ${product.title} to cart">Add to Cart</button>
+          <button type="button" class="btn btn-ghost btn-small" data-action="quickview" aria-label="View details for ${product.title}">View Details</button>
         </div>
       </div>
     `;
