@@ -10,7 +10,7 @@ const products = [
     alt: "Golden country loaf",
     desc: "Hand-shaped sourdough with a golden crust — perfect for breakfast and sandwiches.",
     badge: "Best Seller",
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const products = [
     alt: "Whole wheat bread loaf",
     desc: "Nutritious whole grain bread, baked fresh daily for a healthy lifestyle.",
     badge: null,
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const products = [
     alt: "Crispy French baguette",
     desc: "Classic French-style baguette with a crispy exterior and soft, airy interior.",
     badge: "Popular",
-    rating: 4.8
+    rating: 4.8,
   },
 
   // === CAKES ===
@@ -45,7 +45,7 @@ const products = [
     alt: "Rich chocolate cake",
     desc: "Three layers of moist chocolate sponge with Belgian chocolate ganache frosting.",
     badge: "Best Seller",
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 5,
@@ -56,7 +56,7 @@ const products = [
     alt: "Red velvet cake slice",
     desc: "Stunning red velvet layers with smooth cream cheese frosting.",
     badge: "Popular",
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ const products = [
     alt: "Vanilla birthday cake with candles",
     desc: "Classic vanilla sponge with buttercream frosting — perfect for celebrations.",
     badge: null,
-    rating: 4.7
+    rating: 4.7,
   },
 
   // === PASTRIES ===
@@ -80,7 +80,7 @@ const products = [
     alt: "Flaky croissant",
     desc: "Golden, flaky pastry with 27 layers of butter, baked fresh every morning.",
     badge: "Best Seller",
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 8,
@@ -91,7 +91,7 @@ const products = [
     alt: "Chocolate éclair",
     desc: "Choux pastry filled with vanilla cream and topped with rich chocolate glaze.",
     badge: null,
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 9,
@@ -102,7 +102,7 @@ const products = [
     alt: "Fruit danish pastry",
     desc: "Flaky pastry with sweet cream cheese and seasonal fruit topping.",
     badge: "New",
-    rating: 4.5
+    rating: 4.5,
   },
 
   // === FAST FOODS ===
@@ -115,7 +115,7 @@ const products = [
     alt: "Juicy beef burger",
     desc: "Homemade beef patty with fresh veggies, cheese, and our signature sauce.",
     badge: "Popular",
-    rating: 4.8
+    rating: 4.8,
   },
   {
     id: 11,
@@ -126,7 +126,7 @@ const products = [
     alt: "Chicken shawarma wrap",
     desc: "Seasoned grilled chicken wrapped with veggies and creamy garlic sauce.",
     badge: "Best Seller",
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 12,
@@ -137,7 +137,7 @@ const products = [
     alt: "Golden meat pie",
     desc: "Flaky crust filled with seasoned minced beef and vegetables.",
     badge: null,
-    rating: 4.6
+    rating: 4.6,
   },
 
   // === DRINKS ===
@@ -150,7 +150,7 @@ const products = [
     alt: "Fresh fruit smoothie",
     desc: "Blended with seasonal fruits, yogurt, and a hint of honey.",
     badge: "Popular",
-    rating: 4.7
+    rating: 4.7,
   },
   {
     id: 14,
@@ -161,7 +161,7 @@ const products = [
     alt: "Iced coffee latte",
     desc: "Smooth espresso with cold milk served over ice — perfect for hot days.",
     badge: null,
-    rating: 4.5
+    rating: 4.5,
   },
   {
     id: 15,
@@ -172,7 +172,7 @@ const products = [
     alt: "Traditional Zobo drink",
     desc: "Traditional Nigerian hibiscus drink, chilled and naturally sweetened.",
     badge: "Local Favorite",
-    rating: 4.8
+    rating: 4.8,
   },
 
   // === MORE ===
@@ -185,7 +185,7 @@ const products = [
     alt: "Fruit pie with lattice crust",
     desc: "Seasonal fruit pie with a beautiful lattice crust, served warm.",
     badge: null,
-    rating: 4.6
+    rating: 4.6,
   },
   {
     id: 17,
@@ -196,7 +196,7 @@ const products = [
     alt: "Assorted cupcakes",
     desc: "Assorted flavors: vanilla, chocolate, red velvet, and more — perfect for parties.",
     badge: "Great for Gifts",
-    rating: 4.9
+    rating: 4.9,
   },
   {
     id: 18,
@@ -207,17 +207,17 @@ const products = [
     alt: "Nigerian chin chin snack",
     desc: "Crunchy Nigerian snack made fresh — great for snacking anytime.",
     badge: "Local Favorite",
-    rating: 4.7
-  }
+    rating: 4.7,
+  },
 ];
 
 // Badge color mapping
 const badgeColors = {
   "Best Seller": { bg: "#22c55e", color: "#fff" },
-  "Popular": { bg: "#f59e0b", color: "#fff" },
-  "New": { bg: "#3b82f6", color: "#fff" },
+  Popular: { bg: "#f59e0b", color: "#fff" },
+  New: { bg: "#3b82f6", color: "#fff" },
   "Local Favorite": { bg: "#e34a3b", color: "#fff" },
-  "Great for Gifts": { bg: "#8b5cf6", color: "#fff" }
+  "Great for Gifts": { bg: "#8b5cf6", color: "#fff" },
 };
 
 // Category label mapping
@@ -227,7 +227,7 @@ const categoryLabels = {
   pastries: "Pastries",
   fastfoods: "Fast Foods",
   drinks: "Drinks",
-  more: "More"
+  more: "More",
 };
 
 // Star rating helper
@@ -235,7 +235,7 @@ function renderStars(rating) {
   const full = Math.floor(rating);
   const half = rating % 1 >= 0.5 ? 1 : 0;
   const empty = 5 - full - half;
-  return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+  return "★".repeat(full) + (half ? "½" : "") + "☆".repeat(empty);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -254,26 +254,48 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const badgeHTML = product.badge
-      ? `<span class="product-badge" style="background:${badgeColors[product.badge]?.bg || '#e34a3b'};color:${badgeColors[product.badge]?.color || '#fff'}">${product.badge}</span>`
-      : '';
+      ? `<span class="product-badge" style="background:${
+          badgeColors[product.badge]?.bg || "#e34a3b"
+        };color:${badgeColors[product.badge]?.color || "#fff"}">${
+          product.badge
+        }</span>`
+      : "";
 
     const categoryLabel = categoryLabels[product.category] || "Menu";
     card.innerHTML = `
       <div class="product-image-wrapper">
         ${badgeHTML}
-        <img class="product-image" src="${product.image}" alt="${product.alt}" loading="lazy">
+        <img class="product-image" src="${product.image}" alt="${
+      product.alt
+    }" loading="lazy">
       </div>
       <div class="product-body">
-        <h3 class="product-title" id="product-title-${product.id}">${product.title}</h3>
+        <h3 class="product-title" id="product-title-${product.id}">${
+      product.title
+    }</h3>
         <div class="product-meta">
-          <span class="product-rating" aria-label="Rating ${product.rating} out of 5">${renderStars(product.rating)} <small>${product.rating}</small></span>
-          <span class="product-price" id="product-price-${product.id}">₦${product.price.toLocaleString()}</span>
+          <span class="product-rating" aria-label="Rating ${
+            product.rating
+          } out of 5">${renderStars(product.rating)} <small>${
+      product.rating
+    }</small></span>
+          <span class="product-price" id="product-price-${
+            product.id
+          }">₦${product.price.toLocaleString()}</span>
         </div>
         <p class="product-tags">Category: ${categoryLabel}</p>
-        <p class="product-desc" id="product-desc-${product.id}">${product.desc}</p>
-        <div class="product-actions" role="group" aria-label="Actions for ${product.title}">
-          <button type="button" class="btn btn-small btn-primary" data-action="order" data-id="${product.id}" aria-label="Add ${product.title} to cart">Add to Cart</button>
-          <button type="button" class="btn btn-ghost btn-small" data-action="quickview" aria-label="View details for ${product.title}">View Details</button>
+        <p class="product-desc" id="product-desc-${product.id}">${
+      product.desc
+    }</p>
+        <div class="product-actions" role="group" aria-label="Actions for ${
+          product.title
+        }">
+          <button type="button" class="btn btn-small btn-primary" data-action="order" data-id="${
+            product.id
+          }" aria-label="Add ${product.title} to cart">Add to Cart</button>
+          <button type="button" class="btn btn-ghost btn-small" data-action="quickview" aria-label="View details for ${
+            product.title
+          }">View Details</button>
         </div>
       </div>
     `;
@@ -282,4 +304,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Order handling is delegated globally in main.js to keep behavior consistent across static and dynamic cards.
 });
-

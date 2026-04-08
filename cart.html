@@ -1,343 +1,553 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Cart — Kings & Queens Restaurant and Lounge</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Your Cart — Kings & Queens Restaurant and Lounge</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#ffc942" />
+    <link rel="apple-touch-icon" href="assets/icons/icon-512.png" />
 
-  <!-- PWA Meta -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#d4af37">
-  <link rel="apple-touch-icon" href="assets/icons/icon-512.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@400;500;600&family=Inter:wght@400;500&display=swap">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/components.css" />
 
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/components.css">
+    <meta
+      name="description"
+      content="Review your order from Kings & Queens Restaurant and Lounge."
+    />
+    <meta
+      property="og:title"
+      content="Your Cart — Kings & Queens Restaurant and Lounge"
+    />
+    <meta
+      property="og:description"
+      content="Review your order, update quantities, and proceed to checkout."
+    />
+    <meta
+      property="og:image"
+      content="https://kingsandqueenslounge.com/assets/images/og-share.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Kings & Queens Restaurant and Lounge"
+    />
+    <meta
+      property="og:url"
+      content="https://kingsandqueenslounge.com/cart.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://kingsandqueenslounge.com/assets/images/og-share.jpg"
+    />
+  </head>
 
-  <meta name="description" content="Review your order from Kings & Queens Restaurant and Lounge.">
-  <meta property="og:title" content="Your Cart — Kings & Queens Restaurant and Lounge">
-  <meta property="og:description" content="Review your order, update quantities, and proceed to checkout.">
-  <meta property="og:image" content="https://kingsandqueenslounge.com/assets/images/og-share.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Kings & Queens Restaurant and Lounge">
-  <meta property="og:url" content="https://kingsandqueenslounge.com/cart.html">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://kingsandqueenslounge.com/assets/images/og-share.jpg">
-</head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <img
+            src="assets/icons/icon-512.png"
+            alt="Kings & Queens logo"
+            width="48"
+            height="48"
+          />
+          <span class="brand-name">Kings & Queens</span>
+        </a>
+        <button
+          id="navToggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="mainNav"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="nav-toggle-icon"></span>
+        </button>
+        <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+          <ul class="nav-desktop-only">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html" aria-current="page">Cart</a></li>
+          </ul>
+          <ul class="nav-mobile-only">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+           
+            <li><a href="reservations.html">Reservations</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cart.html" aria-current="page">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="order-success.html">Order Status</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="verify.html">Verify</a></li>
+            <li><a href="logout.html">Logout</a></li> 
+            <li><a href="about.html">About</a></li>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="48" height="48">
-        <span class="brand-name">Kings & Queens</span>
-      </a>
-      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
-        <span class="nav-toggle-icon"></span>
-      </button>
-      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
-        <ul class="nav-desktop-only">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="reservations.html">Reservations</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cart.html" aria-current="page">Cart</a></li>
-        </ul>
-        <ul class="nav-mobile-only">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="reservations.html">Reservations</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="cart.html" aria-current="page">Cart</a></li>
-          <li><a href="checkout.html">Checkout</a></li>
-          <li><a href="order-success.html">Order Status</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="verify.html">Verify</a></li>
-          <li><a href="logout.html">Logout</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="terms.html">Terms</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main-content">
-    <!-- Page Hero -->
-    <section class="page-hero cart-hero">
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <span class="section-badge">Your Order</span>
-          <h1>Shopping <span class="text-gold">Cart</span></h1>
-        </div>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- Cart Content -->
-    <section class="cart-section container">
-      <div class="cart-layout">
-        <!-- Cart Items -->
-        <div class="cart-items" id="cartItems">
-          <!-- Empty state -->
-          <div class="cart-empty" id="cartEmpty">
-            <div class="cart-empty-icon">
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+    <main id="main-content">
+      <!-- Page Hero -->
+      <section class="page-hero cart-hero">
+        <div class="container">
+          <div class="section-header animate-on-scroll">
+            <span class="section-badge">Your Order</span>
+            <h1>Shopping <span class="text-gold">Cart</span></h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart Content -->
+      <section class="cart-section container">
+        <div class="cart-layout">
+          <!-- Cart Items -->
+          <div class="cart-items" id="cartItems">
+            <!-- Empty state -->
+            <div class="cart-empty" id="cartEmpty">
+              <div class="cart-empty-icon">
+                <svg
+                  width="80"
+                  height="80"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path
+                    d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"
+                  />
+                </svg>
+              </div>
+              <h2>Your cart is empty</h2>
+              <p>
+                Looks like you haven't added any items yet. Explore our menu to
+                find something delicious!
+              </p>
+              <a href="menu.html" class="btn btn-primary btn-lg">Browse Menu</a>
+            </div>
+
+            <!-- Cart items list (populated by JS) -->
+            <div
+              class="cart-items-list"
+              id="cartItemsList"
+              style="display: none"
+            >
+              <!-- Sample item structure -->
+              <article class="cart-item">
+                <img
+                  class="cart-item-image"
+                  src="assets/images/sourdough_bread.png"
+                  alt="Royal Grilled Ribeye"
+                  loading="lazy"
+                />
+                <div class="cart-item-details">
+                  <h4>Royal Grilled Ribeye</h4>
+                  <p class="cart-item-price">₦18,500</p>
+                  <p class="cart-item-notes">Special request: Medium rare</p>
+                </div>
+                <div
+                  class="cart-item-quantity quantity-controls"
+                  aria-label="Quantity selector"
+                >
+                  <button
+                    class="qty-btn quantity-btn"
+                    data-action="decrease"
+                    aria-label="Decrease quantity"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                  <span class="qty-value qty-display">1</span>
+                  <button
+                    class="qty-btn quantity-btn"
+                    data-action="increase"
+                    aria-label="Increase quantity"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+                <button class="cart-item-remove" aria-label="Remove item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="3 6 5 6 21 6" />
+                    <path
+                      d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
+                    />
+                  </svg>
+                </button>
+              </article>
+
+              <article class="cart-item">
+                <img
+                  class="cart-item-image"
+                  src="assets/images/drinks_category.png"
+                  alt="Signature Cocktail"
+                  loading="lazy"
+                />
+                <div class="cart-item-details">
+                  <h4>Royal Sunset Cocktail</h4>
+                  <p class="cart-item-price">₦4,500</p>
+                </div>
+                <div
+                  class="cart-item-quantity quantity-controls"
+                  aria-label="Quantity selector"
+                >
+                  <button
+                    class="qty-btn quantity-btn"
+                    data-action="decrease"
+                    aria-label="Decrease quantity"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                  <span class="qty-value qty-display">2</span>
+                  <button
+                    class="qty-btn quantity-btn"
+                    data-action="increase"
+                    aria-label="Increase quantity"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+                <button class="cart-item-remove" aria-label="Remove item">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="3 6 5 6 21 6" />
+                    <path
+                      d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
+                    />
+                  </svg>
+                </button>
+              </article>
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <aside class="cart-summary" id="cartSummary">
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="subtotal">₦27,500</span>
+            </div>
+            <div class="summary-row">
+              <span>Service Fee (5%)</span>
+              <span id="serviceFee">₦1,375</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="total">₦28,875</span>
+            </div>
+
+            <div class="promo-code">
+              <label for="promoCode">Promo Code</label>
+              <div class="promo-input-wrapper">
+                <input type="text" id="promoCode" placeholder="Enter code" />
+                <button class="btn btn-outline">Apply</button>
+              </div>
+            </div>
+
+            <a href="checkout.html" class="btn btn-primary btn-lg btn-full">
+              <span>Proceed to Checkout</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </div>
-            <h2>Your cart is empty</h2>
-            <p>Looks like you haven't added any items yet. Explore our menu to find something delicious!</p>
-            <a href="menu.html" class="btn btn-primary btn-lg">Browse Menu</a>
-          </div>
+            </a>
 
-          <!-- Cart items list (populated by JS) -->
-          <div class="cart-items-list" id="cartItemsList" style="display: none;">
-            <!-- Sample item structure -->
-            <article class="cart-item">
-              <img class="cart-item-image" src="assets/images/sourdough_bread.png" alt="Royal Grilled Ribeye" loading="lazy">
-              <div class="cart-item-details">
-                <h4>Royal Grilled Ribeye</h4>
-                <p class="cart-item-price">₦18,500</p>
-                <p class="cart-item-notes">Special request: Medium rare</p>
-              </div>
-              <div class="cart-item-quantity quantity-controls" aria-label="Quantity selector">
-                <button class="qty-btn quantity-btn" data-action="decrease" aria-label="Decrease quantity">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                  </svg>
-                </button>
-                <span class="qty-value qty-display">1</span>
-                <button class="qty-btn quantity-btn" data-action="increase" aria-label="Increase quantity">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                  </svg>
-                </button>
-              </div>
-              <button class="cart-item-remove" aria-label="Remove item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                </svg>
-              </button>
-            </article>
-
-            <article class="cart-item">
-              <img class="cart-item-image" src="assets/images/drinks_category.png" alt="Signature Cocktail" loading="lazy">
-              <div class="cart-item-details">
-                <h4>Royal Sunset Cocktail</h4>
-                <p class="cart-item-price">₦4,500</p>
-              </div>
-              <div class="cart-item-quantity quantity-controls" aria-label="Quantity selector">
-                <button class="qty-btn quantity-btn" data-action="decrease" aria-label="Decrease quantity">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                  </svg>
-                </button>
-                <span class="qty-value qty-display">2</span>
-                <button class="qty-btn quantity-btn" data-action="increase" aria-label="Increase quantity">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                  </svg>
-                </button>
-              </div>
-              <button class="cart-item-remove" aria-label="Remove item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
-                </svg>
-              </button>
-            </article>
-          </div>
+            <p class="cart-note">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </svg>
+              Pickup orders only. Dine-in orders are handled at the restaurant.
+            </p>
+          </aside>
         </div>
 
-        <!-- Order Summary -->
-        <aside class="cart-summary" id="cartSummary">
-          <h2>Order Summary</h2>
-          
-          <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">₦27,500</span>
-          </div>
-          <div class="summary-row">
-            <span>Service Fee (5%)</span>
-            <span id="serviceFee">₦1,375</span>
-          </div>
-          <div class="summary-row total">
-            <span>Total</span>
-            <span id="total">₦28,875</span>
-          </div>
-
-          <div class="promo-code">
-            <label for="promoCode">Promo Code</label>
-            <div class="promo-input-wrapper">
-              <input type="text" id="promoCode" placeholder="Enter code">
-              <button class="btn btn-outline">Apply</button>
+        <!-- Continue Shopping -->
+        <div class="cart-actions animate-on-scroll">
+          <a href="menu.html" class="btn btn-outline">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Continue Shopping
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="assets/icons/icon-512.png" alt="Kings &amp; Queens logo" width="60" height="60" />
+            <h3>Kings &amp; Queens</h3>
+            <p>Restaurant and Lounge</p>
+            <p class="footer-tagline">Dine Like Royalty</p>
+            <div class="footer-social">
+              <a href="https://instagram.com/kingsandqueenslounge" target="_blank" rel="noopener" aria-label="Instagram"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://facebook.com/kingsandqueenslounge" target="_blank" rel="noopener" aria-label="Facebook"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+              <a href="https://twitter.com/kqlounge" target="_blank" rel="noopener" aria-label="Twitter"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
             </div>
           </div>
-
-          <a href="checkout.html" class="btn btn-primary btn-lg btn-full">
-            <span>Proceed to Checkout</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-
-          <p class="cart-note">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            Pickup orders only. Dine-in orders are handled at the restaurant.
-          </p>
-        </aside>
+          <div class="footer-links-group">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="menu.html">Our Menu</a></li>
+              <li><a href="reservations.html">Reservations</a></li>
+              <li><a href="events.html">Private Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-group">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>123 Royal Avenue, GRA<br />Calabar, Cross River State</p>
+            <p><a href="tel:+2349036826272">+234 903 682 6272</a></p>
+            <p><a href="mailto:hello@kingsandqueenslounge.com">hello@kingsandqueenslounge.com</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> Kings &amp; Queens Restaurant and Lounge. All rights reserved.</p>
+          <p class="crafted-by">Crafted with â¤ï¸ by <strong>KING</strong></p>
+        </div>
       </div>
+    </footer>
 
-      <!-- Continue Shopping -->
-      <div class="cart-actions animate-on-scroll">
-        <a href="menu.html" class="btn btn-outline">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M19 12H5M12 19l-7-7 7-7"/>
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav" aria-label="Quick navigation">
+      <div class="bottom-nav-inner">
+        <a href="index.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+            <polyline points="9,22 9,12 15,12 15,22" />
           </svg>
-          Continue Shopping
+          <span>Home</span>
+        </a>
+        <a href="menu.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"
+            />
+          </svg>
+          <span>Menu</span>
+        </a>
+        <a href="cart.html" class="bottom-nav-item active" aria-current="page">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"
+            />
+          </svg>
+          <span>Cart</span>
+        </a>
+        <a href="reservations.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          <span>Reserve</span>
+        </a>
+        <a href="contact.html" class="bottom-nav-item">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Contact</span>
         </a>
       </div>
-    </section>
-  </main>
+    </nav>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="assets/icons/icon-512.png" alt="Kings & Queens logo" width="60" height="60">
-          <h3>Kings & Queens</h3>
-          <p>Restaurant and Lounge</p>
-          <p class="footer-tagline">Dine Like Royalty</p>
-        </div>
-        <div class="footer-links-group">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="menu.html">Our Menu</a></li>
-            <li><a href="reservations.html">Reservations</a></li>
-            <li><a href="events.html">Private Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-group">
-          <h4>Support</h4>
-          <ul>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact</h4>
-          <p>123 Royal Avenue, GRA<br>Calabar, Cross River State</p>
-          <p><a href="tel:+2349036826272">+234 903 682 6272</a></p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Kings & Queens Restaurant and Lounge. All rights reserved.</p>
-        <p class="crafted-by">Crafted with ❤️ by <strong>KING</strong></p>
-      </div>
-    </div>
-  </footer>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/animations.js" defer></script>
+    <script src="scripts/pwa.js" defer></script>
+    <script>
+      // Show cart items for demo (in real app, this would check cart state)
+      document.getElementById("cartEmpty").style.display = "none";
+      document.getElementById("cartItemsList").style.display = "block";
 
-  <!-- Bottom Navigation (Mobile) -->
-  <nav class="bottom-nav" aria-label="Quick navigation">
-    <div class="bottom-nav-inner">
-      <a href="index.html" class="bottom-nav-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/>
-        </svg>
-        <span>Home</span>
-      </a>
-      <a href="menu.html" class="bottom-nav-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/>
-        </svg>
-        <span>Menu</span>
-      </a>
-      <a href="cart.html" class="bottom-nav-item active" aria-current="page">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-        </svg>
-        <span>Cart</span>
-      </a>
-      <a href="reservations.html" class="bottom-nav-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
-        </svg>
-        <span>Reserve</span>
-      </a>
-      <a href="contact.html" class="bottom-nav-item">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
-        </svg>
-        <span>Contact</span>
-      </a>
-    </div>
-  </nav>
+      // Quantity controls
+      document.querySelectorAll(".qty-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const qtyValue = this.parentElement.querySelector(".qty-value");
+          let qty = parseInt(qtyValue.textContent);
 
-  <script src="scripts/main.js" defer></script>
-  <script src="scripts/animations.js" defer></script>
-  <script src="scripts/pwa.js" defer></script>
-  <script>
-    // Show cart items for demo (in real app, this would check cart state)
-    document.getElementById('cartEmpty').style.display = 'none';
-    document.getElementById('cartItemsList').style.display = 'block';
-    
-    // Quantity controls
-    document.querySelectorAll('.qty-btn').forEach(btn => {
-      btn.addEventListener('click', function() {
-        const qtyValue = this.parentElement.querySelector('.qty-value');
-        let qty = parseInt(qtyValue.textContent);
-        
-        if (this.dataset.action === 'increase') {
-          qty++;
-        } else if (this.dataset.action === 'decrease' && qty > 1) {
-          qty--;
-        }
-        
-        qtyValue.textContent = qty;
-        // In real app, update cart and recalculate totals
-      });
-    });
-
-    // Remove item
-    document.querySelectorAll('.cart-item-remove').forEach(btn => {
-      btn.addEventListener('click', function() {
-        if (confirm('Remove this item from your cart?')) {
-          this.closest('.cart-item').remove();
-          // Check if cart is empty
-          if (document.querySelectorAll('.cart-item').length === 0) {
-            document.getElementById('cartEmpty').style.display = 'block';
-            document.getElementById('cartItemsList').style.display = 'none';
+          if (this.dataset.action === "increase") {
+            qty++;
+          } else if (this.dataset.action === "decrease" && qty > 1) {
+            qty--;
           }
-        }
-      });
-    });
-  </script>
-</body>
 
+          qtyValue.textContent = qty;
+          // In real app, update cart and recalculate totals
+        });
+      });
+
+      // Remove item
+      document.querySelectorAll(".cart-item-remove").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          if (confirm("Remove this item from your cart?")) {
+            this.closest(".cart-item").remove();
+            // Check if cart is empty
+            if (document.querySelectorAll(".cart-item").length === 0) {
+              document.getElementById("cartEmpty").style.display = "block";
+              document.getElementById("cartItemsList").style.display = "none";
+            }
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

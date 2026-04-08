@@ -321,13 +321,14 @@
     glow.className = "cursor-glow";
     glow.style.cssText = `
             position: fixed;
+            left: 0;
+            top: 0;
             width: 400px;
             height: 400px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
             pointer-events: none;
             z-index: 0;
-            transform: translate(-50%, -50%);
             transition: opacity 0.3s ease;
             opacity: 0;
         `;
@@ -337,11 +338,13 @@
       mouseY = 0;
     let glowX = 0,
       glowY = 0;
+    let rafId = null;
 
     document.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       glow.style.opacity = "1";
+      if (!rafId) rafId = requestAnimationFrame(animateGlow);
     });
 
     document.addEventListener("mouseleave", () => {
@@ -349,13 +352,17 @@
     });
 
     function animateGlow() {
-      glowX = lerp(glowX, mouseX, 0.1);
-      glowY = lerp(glowY, mouseY, 0.1);
-      glow.style.left = `${glowX}px`;
-      glow.style.top = `${glowY}px`;
-      requestAnimationFrame(animateGlow);
+      const dx = mouseX - glowX;
+      const dy = mouseY - glowY;
+      glowX = glowX + dx * 0.1;
+      glowY = glowY + dy * 0.1;
+      glow.style.transform = `translate(calc(-50% + ${glowX}px), calc(-50% + ${glowY}px))`;
+      if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) {
+        rafId = requestAnimationFrame(animateGlow);
+      } else {
+        rafId = null;
+      }
     }
-    animateGlow();
   }
 
   // ============================================

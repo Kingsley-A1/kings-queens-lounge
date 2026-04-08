@@ -40,15 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Header scroll effect
-  const header = document.querySelector('.site-header');
+  const header = document.querySelector(".site-header");
   if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }, { passive: true });
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      },
+      { passive: true }
+    );
   }
 
   // Mobile navigation with overlay
@@ -56,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const mainNav = document.getElementById("mainNav");
 
   // Create overlay element
-  let navOverlay = document.querySelector('.nav-overlay');
+  let navOverlay = document.querySelector(".nav-overlay");
   if (!navOverlay && navToggle && mainNav) {
-    navOverlay = document.createElement('div');
-    navOverlay.className = 'nav-overlay';
-    navOverlay.setAttribute('aria-hidden', 'true');
+    navOverlay = document.createElement("div");
+    navOverlay.className = "nav-overlay";
+    navOverlay.setAttribute("aria-hidden", "true");
     document.body.appendChild(navOverlay);
   }
 
@@ -109,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-
   // newsletter form -> use toast
   const newsletterForm = document.getElementById("newsletterForm");
   if (newsletterForm) {
@@ -141,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mobileCTA.setAttribute("aria-hidden", "true");
         try {
           localStorage.setItem("sf_mobile_cta_dismissed", "1");
-        } catch (err) { }
+        } catch (err) {}
 
         // polite SR announcement
         let sr = document.getElementById("sf-sr-announcer");
@@ -199,7 +202,11 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.textContent ||
       ""
     ).toLowerCase();
-    if (label.includes("order") || label.includes("add to cart") || label.includes("add")) {
+    if (
+      label.includes("order") ||
+      label.includes("add to cart") ||
+      label.includes("add")
+    ) {
       const product = extractProductFromCard(card);
       if (product) {
         const order = JSON.parse(localStorage.getItem("sunflourOrder") || "[]");
@@ -211,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         try {
           localStorage.setItem("sunflourOrder", JSON.stringify(order));
-        } catch (err) { }
+        } catch (err) {}
         window.sfToast.success("Added to cart");
         setTimeout(() => (window.location.href = "checkout.html"), 350);
       }
