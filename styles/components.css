@@ -345,7 +345,9 @@
 .product-card:hover {
   transform: translateY(-12px) scale(1.02);
   border-color: rgba(255, 201, 66, 0.5);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 201, 66, 0.2);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(255, 201, 66, 0.2);
 }
 
 .product-card:focus-within {
@@ -379,7 +381,11 @@
 }
 
 .product-badge.popular {
-  background: linear-gradient(135deg, var(--kq-gold-dark, #e6a800), var(--kq-gold-accent, #ffb300));
+  background: linear-gradient(
+    135deg,
+    var(--kq-gold-dark, #e6a800),
+    var(--kq-gold-accent, #ffb300)
+  );
   color: #0a0a0a;
   box-shadow: 0 4px 20px rgba(230, 168, 0, 0.55);
 }
@@ -564,7 +570,9 @@
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 60px rgba(212, 175, 55, 0.1);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 0 60px rgba(212, 175, 55, 0.1);
   transform: scale(0.9) translateY(20px);
   transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -1052,7 +1060,9 @@
 .value-card:hover {
   transform: translateY(-6px);
   border-color: rgba(255, 201, 66, 0.3);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 201, 66, 0.1);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 201, 66, 0.1);
 }
 
 .value-icon {
@@ -1252,7 +1262,9 @@
 .award-item:hover {
   transform: translateY(-8px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .award-item:hover::before {
@@ -1464,7 +1476,9 @@
 .team-member:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .team-member img {
@@ -2164,7 +2178,9 @@
 .experience-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .experience-card:hover::before {
@@ -2297,7 +2313,9 @@
 .category-item:hover {
   transform: translateY(-10px) scale(1.02);
   border-color: rgba(255, 201, 66, 0.5);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .category-item:hover::before {
@@ -2460,7 +2478,9 @@
 .benefit-card:hover {
   transform: translateY(-8px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 201, 66, 0.1);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(255, 201, 66, 0.1);
 }
 
 .benefit-card:hover::before {
@@ -2616,7 +2636,9 @@
 .testimonial:hover {
   border-color: rgba(212, 175, 55, 0.3);
   transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(212, 175, 55, 0.1);
 }
 
 .testimonial p {
@@ -2685,7 +2707,8 @@
 .stats {
   margin: 0;
   padding: 6rem 0;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(13, 13, 13, 0.98) 0%,
       rgba(26, 26, 26, 0.98) 100%
@@ -2955,7 +2978,10 @@
   overflow: hidden;
   aspect-ratio: 3/4;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.25s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.25s ease;
 }
 
 /* no special large item — all uniform */
@@ -2966,7 +2992,9 @@
 .gallery-preview .gallery-item:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 201, 66, 0.35);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 20px rgba(255, 201, 66, 0.12);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(255, 201, 66, 0.12);
 }
 
 .gallery-preview .gallery-item img {
@@ -2985,7 +3013,11 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.72) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 45%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
   pointer-events: none;
 }
 
@@ -3013,7 +3045,6 @@
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
-
 
 /* ============================================
    LOCATION & HOURS — Premium Section
@@ -3769,7 +3800,9 @@
     justify-content: center;
     z-index: 60;
     padding: 0 1rem;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease;
   }
 
   .mobile-cta-inner {
@@ -4239,7 +4272,9 @@
   border: 1px solid rgba(255, 201, 66, 0.15);
   border-radius: 24px;
   padding: 3rem;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 100px rgba(255, 201, 66, 0.05);
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 100px rgba(255, 201, 66, 0.05);
 }
 
 /* Auth Brand Side */
@@ -4772,7 +4807,9 @@
   font-size: 16px; /* Prevents zoom on iOS */
   border: 2px solid var(--sf-gray-200, #e5e5e5);
   border-radius: var(--sf-radius-md, 12px);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
@@ -5071,7 +5108,9 @@
 .event-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .event-card:hover::before {
@@ -5127,7 +5166,9 @@
 .venue-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .venue-image {
@@ -5199,7 +5240,9 @@
 .package-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .package-card.featured {
@@ -5298,7 +5341,9 @@
 .blog-card:hover {
   transform: translateY(-10px);
   border-color: rgba(255, 201, 66, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 201, 66, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 201, 66, 0.15);
 }
 
 .blog-card.featured {
@@ -6378,7 +6423,11 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.6);
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .footer-social a:hover {
@@ -6444,7 +6493,9 @@
 .footer-links-group a {
   color: rgba(255, 255, 255, 0.55);
   font-size: 0.88rem;
-  transition: color 0.2s ease, padding-left 0.2s ease;
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
   display: inline-block;
 }
 

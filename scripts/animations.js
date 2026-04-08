@@ -88,7 +88,7 @@
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     observer.observe(statsSection);
@@ -172,7 +172,7 @@
         touchStartX = e.changedTouches[0].screenX;
         pauseAutoplay();
       },
-      { passive: true }
+      { passive: true },
     );
 
     track.addEventListener(
@@ -182,7 +182,7 @@
         handleSwipe();
         startAutoplay();
       },
-      { passive: true }
+      { passive: true },
     );
 
     function handleSwipe() {
@@ -204,7 +204,7 @@
     const animatedElements = document.querySelectorAll(
       ".animate-on-scroll, .category-item, .product-card, .experience-card, " +
         ".benefit, .faq-item, .team-member, .section-header, .gallery-item, " +
-        ".testimonial, .stat, .feature-card"
+        ".testimonial, .stat, .feature-card",
     );
 
     if (!animatedElements.length) return;
@@ -233,7 +233,7 @@
       {
         threshold: CONFIG.scrollThreshold,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     animatedElements.forEach((el) => observer.observe(el));
@@ -284,7 +284,7 @@
           ticking = true;
         }
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -396,7 +396,7 @@
 
         lastScroll = currentScroll;
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -408,18 +408,21 @@
 
     // Stagger hero elements
     const heroElements = document.querySelectorAll(
-      ".hero-badge, .hero-title, .hero-sub, .hero-ctas, .hero-features"
+      ".hero-badge, .hero-title, .hero-sub, .hero-ctas, .hero-features",
     );
 
     heroElements.forEach((el, index) => {
       el.style.opacity = "0";
       el.style.transform = "translateY(30px)";
 
-      setTimeout(() => {
-        el.style.transition = "all 0.8s cubic-bezier(0.19, 1, 0.22, 1)";
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      }, 200 + index * 150);
+      setTimeout(
+        () => {
+          el.style.transition = "all 0.8s cubic-bezier(0.19, 1, 0.22, 1)";
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+        },
+        200 + index * 150,
+      );
     });
   }
 
@@ -468,7 +471,7 @@
     if (window.matchMedia("(hover: none)").matches) return;
 
     const cards = document.querySelectorAll(
-      ".product-card, .experience-card, .category-item"
+      ".product-card, .experience-card, .category-item",
     );
 
     cards.forEach((card) => {
@@ -617,7 +620,7 @@
       (e) => {
         touchStartX = e.changedTouches[0].screenX;
       },
-      { passive: true }
+      { passive: true },
     );
 
     slideshow.addEventListener(
@@ -636,7 +639,7 @@
           startAutoplay();
         }
       },
-      { passive: true }
+      { passive: true },
     );
 
     // Start autoplay
