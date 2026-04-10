@@ -537,7 +537,7 @@
     // Core animations
     initPageLoadAnimations();
     initStatsCounter();
-    initTestimonialCarousel();
+    // initTestimonialCarousel(); // disabled — static 2-column grid in use
     initScrollAnimations();
     initHeroSlideshow();
 

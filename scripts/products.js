@@ -293,9 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <button type="button" class="btn btn-small btn-primary" data-action="order" data-id="${
             product.id
           }" aria-label="Add ${product.title} to cart">Add to Cart</button>
-          <button type="button" class="btn btn-ghost btn-small" data-action="quickview" aria-label="View details for ${
-            product.title
-          }">View Details</button>
+          <a href="product-detail.html?id=${product.id}" class="btn btn-ghost btn-small" aria-label="View details for ${product.title}">View Details</a>
         </div>
       </div>
     `;

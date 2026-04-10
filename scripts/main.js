@@ -225,3 +225,74 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// ============================================================
+// HERO COLLAGE — Rotating Product Images
+// Cycles each of the 4 tiles through all product images
+// every 3 seconds with a smooth crossfade, staggered per tile.
+// ============================================================
+document.addEventListener("DOMContentLoaded", function () {
+  var tiles = document.querySelectorAll(".hero-collage-grid .collage-item");
+  if (!tiles.length) return;
+
+  var images = [
+    { src: "assets/images/chocolate_cake.png",    label: "Signature Cakes" },
+    { src: "assets/images/butter_croissant.png",  label: "Fresh Pastries" },
+    { src: "assets/images/drinks_category.png",   label: "Craft Cocktails" },
+    { src: "assets/images/sourdough_bread.png",   label: "Artisan Bread" },
+    { src: "assets/images/red_velvet_cake.png",   label: "Red Velvet Cake" },
+    { src: "assets/images/pizza.png",             label: "Stone Baked Pizza" },
+    { src: "assets/images/beef_burger.png",       label: "Premium Burgers" },
+    { src: "assets/images/chicken_wings.png",     label: "Crispy Wings" },
+    { src: "assets/images/iced_coffee.png",       label: "Specialty Coffee" },
+    { src: "assets/images/baguette.png",          label: "Artisan Baguettes" },
+    { src: "assets/images/cinnamon_roll.png",     label: "Cinnamon Rolls" },
+    { src: "assets/images/danish_pastry.png",     label: "Danish Pastries" },
+    { src: "assets/images/birthday_cake.png",     label: "Celebration Cakes" },
+    { src: "assets/images/orange_juice.png",      label: "Fresh Juices" },
+    { src: "assets/images/whole_wheat_bread.png", label: "Whole Grain Bread" },
+    { src: "assets/images/bread_category.png",    label: "Fresh Breads" },
+    { src: "assets/images/cake_category.png",     label: "Cake Collection" },
+    { src: "assets/images/pastries_category.png", label: "Pastry Selection" },
+    { src: "assets/images/fastfood_category.png", label: "Quick Bites" },
+  ];
+
+  // Preload all images so transitions are instant
+  images.forEach(function (item) {
+    var preload = new Image();
+    preload.src = item.src;
+  });
+
+  // Each tile starts at a different point in the images array
+  var startIndices = [0, 5, 10, 14];
+
+  tiles.forEach(function (tile, tileIndex) {
+    var idx = startIndices[tileIndex] % images.length;
+    var img = tile.querySelector("img");
+    var labelEl = tile.querySelector(".collage-label");
+
+    if (!img) return;
+
+    // Set initial image
+    img.src = images[idx].src;
+    if (labelEl) labelEl.textContent = images[idx].label;
+
+    // Stagger each tile's cycle start by 750 ms
+    setTimeout(function () {
+      setInterval(function () {
+        idx = (idx + 1) % images.length;
+        var next = images[idx];
+
+        // Fade out current image
+        img.style.opacity = "0";
+
+        // After fade-out completes, swap src and fade in
+        setTimeout(function () {
+          img.src = next.src; // already preloaded — no flash
+          if (labelEl) labelEl.textContent = next.label;
+          img.style.opacity = "1";
+        }, 350);
+      }, 3000);
+    }, tileIndex * 750);
+  });
+});

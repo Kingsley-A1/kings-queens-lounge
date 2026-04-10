@@ -439,6 +439,32 @@
           </aside>
         </div>
       </section>
+
+      <!-- Order Success Screen (shown after Place Order) -->
+      <section class="order-success-screen" id="orderSuccess" aria-live="polite" aria-label="Order confirmed" style="display:none;">
+        <div class="order-success-inner">
+          <div class="order-success-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <span class="order-success-badge">Order Confirmed!</span>
+          <h2>Your order is placed<br>and on its way.</h2>
+          <p class="order-success-message">We've received your order and our team is already preparing it. See you soon at Kings &amp; Queens!</p>
+          <p class="order-ref">Order Reference: <strong id="orderRef">KQ-000000</strong></p>
+          <div class="order-success-ctas">
+            <a href="menu.html" class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18M3 9h18M3 15h18"/></svg>
+              Buy More
+            </a>
+            <button type="button" class="btn btn-outline btn-lg" id="shareOrderBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+              Share
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer site-footer-minimal">
@@ -473,24 +499,41 @@
           });
         });
 
-      // Form submission
+      // Form submission — show in-page success screen
       document
         .getElementById("checkoutForm")
         .addEventListener("submit", function (e) {
           e.preventDefault();
 
-          const paymentMethod = document.querySelector(
-            'input[name="paymentMethod"]:checked'
-          ).value;
+          // Generate order reference
+          const ref = "KQ-" + Date.now().toString().slice(-6);
+          document.getElementById("orderRef").textContent = ref;
 
-          if (paymentMethod === "card") {
-            // In real app, integrate with Paystack
-            alert("Redirecting to Paystack for secure payment...");
-          }
+          // Hide checkout form + progress bar
+          document.querySelector(".checkout-section").style.display = "none";
+          document.querySelector(".checkout-progress").style.display = "none";
 
-          // Redirect to success page
-          window.location.href = "order-success.html";
+          // Show success screen
+          const successEl = document.getElementById("orderSuccess");
+          successEl.style.display = "flex";
+          successEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // Clear cart from storage
+          try { localStorage.removeItem("kq_cart"); } catch (err) {}
         });
+
+      // Share order
+      document.getElementById("shareOrderBtn")?.addEventListener("click", function () {
+        const ref = document.getElementById("orderRef").textContent;
+        const shareText = `I just placed an order at Kings & Queens Restaurant & Lounge! \uD83C\uDF7D\uFE0F Reference: ${ref}`;
+        if (navigator.share) {
+          navigator.share({ title: "Kings & Queens Order", text: shareText, url: window.location.origin });
+        } else {
+          navigator.clipboard?.writeText(shareText)
+            .then(() => window.sfToast?.success("Order details copied!") || alert("Copied to clipboard!"))
+            .catch(() => alert(shareText));
+        }
+      });
     </script>
   </body>
 </html>
