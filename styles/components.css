@@ -233,8 +233,6 @@
    ============================================ */
 .hero {
   min-height: 100vh;
-  padding: 0;
-  background: transparent;
 }
 
 .hero-inner {
@@ -265,7 +263,7 @@
     font-size: 1rem;
   }
 
-  .btn {
+  .hero-ctas .btn {
     padding: 1rem 1.5rem;
     font-size: 0.95rem;
     width: 100%;
@@ -5585,7 +5583,9 @@
   border: none;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.8);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5670,8 +5670,14 @@
 }
 
 @keyframes successPop {
-  from { transform: scale(0.4); opacity: 0; }
-  to   { transform: scale(1);   opacity: 1; }
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .order-success-badge {
@@ -6042,7 +6048,9 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
 .payment-option input[type="radio"]:checked + .payment-option-content {
@@ -6521,7 +6529,11 @@
 }
 
 .private-room-card {
-  background: linear-gradient(145deg, rgba(28, 26, 24, 0.97), rgba(18, 17, 15, 0.99));
+  background: linear-gradient(
+    145deg,
+    rgba(28, 26, 24, 0.97),
+    rgba(18, 17, 15, 0.99)
+  );
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   overflow: hidden;
@@ -6777,8 +6789,6 @@
 .related-products .section-header {
   margin-bottom: 2rem;
 }
-
-
 
 .summary-item-details p {
   font-size: 0.8rem;

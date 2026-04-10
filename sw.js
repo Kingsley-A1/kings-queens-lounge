@@ -1,6 +1,6 @@
 // Service Worker for Kings & Queens Restaurant PWA
-const CACHE_NAME = "kings-queens-v1";
-const OFFLINE_URL = "/index.html";
+const CACHE_NAME = "kings-queens-v2";
+const OFFLINE_URL = "/404.html";
 
 // Assets to cache on install
 const PRECACHE_ASSETS = [
@@ -13,6 +13,7 @@ const PRECACHE_ASSETS = [
   "/events.html",
   "/gallery.html",
   "/checkout.html",
+  "/order-success.html",
   "/blog.html",
   "/404.html",
   "/styles/styles.css",

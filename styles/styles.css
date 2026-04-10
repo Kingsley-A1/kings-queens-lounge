@@ -782,6 +782,8 @@ section {
   .main-nav .nav-mobile-only {
     display: flex;
   }
+
+  .main-nav a {
     text-align: center;
     transition: all var(--sf-duration) var(--sf-ease);
   }
@@ -1056,6 +1058,7 @@ main {
 
 /* Right — 4-image collage */
 .hero-collage {
+  padding-top: 2rem;
   animation: heroFadeIn 0.9s 0.15s ease both;
 }
 
